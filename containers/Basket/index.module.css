@@ -1,0 +1,243 @@
+@media screen and (max-width: 750px) {
+  .basket_page_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    min-height: 60vh;
+  }
+  .empty_basket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1.5em;
+  }
+
+  .basket_page_action_container {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  .empty_basket_action_container {
+    margin-top: 5%;
+    width: 100%;
+  }
+
+  .basket_page_item_section {
+    height: 100%;
+    width: 100%;
+    padding: 0.5em 5%;
+    border: 1px solid #DEDEDE;
+    border-radius: 12px;
+  }
+
+  .basket_page_title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .basket_page_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1em;
+  }
+  
+  .basket_page_total_articles {
+    color: #0F172A;
+    font-size: 1.5em;
+  }
+
+  .basket_page_footer_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    text-align: left;
+    width: 100%;
+  }
+
+  .basket_page_total {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    width: 100%;
+  }
+
+  .basket_page_total_mobile_section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  .basket_page_item_section_content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .basket_item_preview_container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 30%;
+  }
+  
+  .basket_item_img_illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 750px) {
+  .basket_page_container {
+    display: flex;
+    flex-direction: column;
+    margin: 7em 20%;
+    min-height: 60vh;
+  }
+  .empty_basket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  .empty_basket_action_container {
+    width: 40%;
+    margin: 10%;
+  }
+
+  .basket_page_item_section {
+    border: 1px solid #DEDEDE;
+    border-radius: 12px;
+    height: 100%;
+    margin: 0.5em 0;
+  }
+
+  .basket_page_title {
+    font-size: 2.625em;
+    font-weight: bold;
+  }
+
+  .basket_page_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1em;
+  }
+  
+  .basket_page_total_articles {
+    color: #0F172A;
+    font-size: 2em;
+  }
+
+  .basket_page_footer_container {
+    display: flex;
+    flex-direction: column;
+    width: 9.25em;
+    row-gap: 1em;
+    text-align: left;
+  }
+
+  .basket_page_total {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .basket_page_item_section_content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.625em 1.25em;
+  }
+  .basket_page_item_section_content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.625em 1.25em;
+  }
+
+  .basket_item_preview_container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 5em;
+  }
+  
+  .basket_item_img_illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.basket_page_items_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.basket_page_item_section_content_description {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.basket_item_short_description {
+  color: rgba(27, 32, 50, 0.75);
+  font-size: 0.75em;
+}
+
+.basket_page_item_informations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 60%;
+}
+
+.basket_item_total_price {
+  color: rgb(56, 199, 152);
+}
+
+.delete_icon:hover {
+  color: rgba(216, 25, 25, 1);
+}
+
+.basket_items_grid {
+  display: grid;
+  row-gap: 0.5em;
+  margin: 1em 0;
+}
+
+.delete_dialog_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  margin: 10%;
+}
+
+.delete_dialog_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete_dialog_actions {
+  display: flex;
+  column-gap: 1em;
+}
+
+.basket_page_footer {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0;
+  align-items: flex-end;
+}

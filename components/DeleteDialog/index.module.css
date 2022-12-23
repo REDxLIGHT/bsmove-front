@@ -1,0 +1,18 @@
+.delete_dialog_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  margin: 10%;
+}
+
+.delete_dialog_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete_dialog_actions {
+  display: flex;
+  column-gap: 1em;
+}

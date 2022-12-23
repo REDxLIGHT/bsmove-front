@@ -1,0 +1,52 @@
+@media screen and (max-width : 400px)
+{
+  .input_container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .forgot_password {
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 400px)
+{
+  .input_container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .forgot_password {
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10%;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  width: 100%;
+  padding: 10%;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.submit_button_container {
+  margin-top: 8px;
+}

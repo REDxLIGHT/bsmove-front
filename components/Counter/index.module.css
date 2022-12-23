@@ -1,0 +1,51 @@
+@media screen and (max-width: 750px) {
+  .furniture_icon_style {
+    font-size: 50%;
+  }
+  .furniture_count_button {
+    display: flex;
+    /* font-size: 0.6em; */
+    align-items: center;
+    justify-content: center;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0 1%;
+    border-radius: 3px;
+    border: 1px solid rgba(222, 222, 222, 1);
+    color: rgba(27, 32, 50, 0.75);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .furniture_icon_style {
+    font-size: 50%;
+  }
+  .furniture_count_button {
+    display: flex;
+    font-size: 0.9em;
+    margin: 0 1%;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 5px;
+    border: 1px solid rgba(222, 222, 222, 1);
+    color: rgba(27, 32, 50, 0.75);
+  }
+}
+
+.furniture_count_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.furniture_count_buttons_container {
+  max-width: 6.5em;
+  display: flex;
+  flex-direction: row;
+}
+
+.furniture_max_quantity {
+  color: rgba(27, 32, 50, 0.5);
+}

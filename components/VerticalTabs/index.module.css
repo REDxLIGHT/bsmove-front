@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.tab_container {
+  text-align: left;
+}
+
+.tab_container_button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: inherit;
+}

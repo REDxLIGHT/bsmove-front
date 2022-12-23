@@ -1,0 +1,217 @@
+@media screen and (max-width: 750px) {
+  .volume_calculator_page_container {
+    margin: 10% 8%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .volume_calculator_page_calculator {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+    margin-bottom: 10%;
+  }
+
+  .volume_calculator_page_resume {
+    border-radius: 12px;
+    border: 1px solid rgba(222, 222, 222, 1);
+    height: 100%;
+    width: 100%;
+  }
+
+  .volume_calculator_page_calculator_action_container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .volume_calculator_page_container {
+    margin: 5% 8%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .volume_calculator_page_calculator {
+    width: 55%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+  }
+
+  .volume_calculator_page_resume {
+    border-radius: 12px;
+    border: 1px solid rgba(222, 222, 222, 1);
+    height: 100%;
+    width: 40%;
+  }
+
+  .volume_calculator_page_calculator_action_container {
+    width: 30%;
+  }
+}
+
+.volume_calculator_page_rooms_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  width: 100%;
+}
+
+.calculator_room_item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+}
+
+.volume_calculator_page_room_accordion {
+  border-radius: 6px 6px 0 0;
+}
+
+.volume_calculator_page_accordion_header {
+  background-color: rgba(222, 222, 222, 1);
+}
+
+.volume_calculator_page_accordion_header_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.volume_calculator_page_accordion_header_content_title {
+  max-width: 75%;
+}
+
+.volume_calculator_page_accordion_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1em;
+  background-color: white;
+  border-radius: 0 0 6px 6px;
+}
+
+.volume_calculator_page_resume_content {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 3%;
+  row-gap: 1em;
+}
+
+.volume_calculator_page_resume_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.volume_calculator_page_resume_title {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.volume_calculator_page_resume_items {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  row-gap: 1em;
+}
+
+.volume_calculator_page_resume_item_infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.volume_calculator_page_resume_item_infos > :first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 75%;
+}
+
+.volume_calculator_page_resume_total_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5% 0;
+}
+
+.volume_calculator_page_resume_total_volume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.volume_calculator_page_resume_total_volume_number {
+  font-size: 1.5em;
+  color: rgb(56, 199, 152);
+}
+
+.volume_calculator_page_resume_total_volume_info {
+  font-size: 0.7em;
+}
+
+.volume_calculator_page_resume_action_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1em;
+  width: 75%;
+}
+
+.volume_calculator_page_subtitle {
+  color: rgba(139, 145, 151, 1);
+}
+
+.volume_calculator_no_room {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(139, 145, 151, 1);
+}
+
+.room_dialog_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5%;
+}
+
+.room_dialog_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.room_dialog_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3em;
+  height: 100%;
+  margin-top: 3em;
+}
+
+.volume_calculator_page_resume_room_name {
+  font-weight: 600;
+  max-width: 75%;
+}
+
+.volume_autocomplete_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 10%;
+}

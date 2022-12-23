@@ -1,0 +1,9 @@
+.pager_page_handler {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+}
+
+.pager_page_button {
+    text-align: center;
+}

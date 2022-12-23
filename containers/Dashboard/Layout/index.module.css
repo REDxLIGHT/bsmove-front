@@ -1,0 +1,31 @@
+@media screen and (max-width: 750px) {
+  .dashboard_page_container {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .dashboard_page_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  .dashboard_main_container {
+    width: 80%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard_content_container {
+    height: 90%;
+    min-height: 90vh;
+    background-color: rgb(249, 250, 251);
+    padding: 1.5rem 4rem;
+  }
+}

@@ -1,0 +1,59 @@
+@media screen and (max-width : 400px)
+{
+  .input_container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .forgot_password {
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 400px)
+{
+  .input_container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .forgot_password {
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10%;
+  width: 100%;
+  padding: 10%;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.cgu_link {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cgu_content {
+  font-size: 0.8rem;
+}
+.address_inputs_container > div{
+  margin: 0 1em;
+}

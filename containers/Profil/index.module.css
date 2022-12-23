@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 8% 0 8% 20%;
+}
+
+.profil_navigation_row_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profil_navigation_row_categories {
+  padding: 0.5em 1.5em;
+  background-color: rgba(248, 250, 252, 1);
+  min-width: 15.625em;
+}
+
+.profil_informations_container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9.5em;
+}
+
+.profil_navigation_row_category_title {
+  color: rgba(139, 145, 151, 1);
+  margin: 0 0 1.5em 0;
+}
+
+.profil_navigation_row_category_label {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.profil_navigation_row_category_container {
+  margin: 1.5em 0;
+}
+
+.profil_content_section_container {
+  border: 1px solid #DEDEDE;
+  border-radius: 12px;
+  min-height: 6.7em;
+  height: 100%;
+  max-width: 80%;
+  margin-bottom: 1.25em;
+  display: flex;
+  flex-direction: row;
+}
+
+.profil_content_section_infos_container {
+  width: 75%;
+}
+
+.profil_content_section_action_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.profil_content_section_action {
+  width: 80%;
+}
+
+.profil_content_block {
+  max-width: 100%;
+}
+
+.profil_content_block_label {
+  font-size: 1.125rem;
+}
+
+.profil_content_block_content {
+  font-size: 1.125rem;
+  color: rgba(139, 145, 151, 1);
+}
+
+.profil_logout {
+  cursor: pointer;
+  text-decoration: underline;
+}

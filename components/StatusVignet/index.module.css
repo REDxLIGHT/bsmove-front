@@ -1,0 +1,28 @@
+.status_vignet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-size: 80%;
+  padding: 0.5em 0;
+}
+
+.status_vignet_success {
+  color: rgba(4, 120, 87, 1);
+  background-color: rgba(209, 250, 229, 1);
+}
+
+.status_vignet_pending {
+  color: rgba(245, 158, 11, 1);
+  background-color: rgba(254, 243, 199, 1);
+}
+
+.status_vignet_incomplete {
+  color: rgba(71, 85, 105, 1);
+  background-color: rgba(241, 245, 249, 1);
+}
+
+.status_vignet_error {
+  color: rgba(239, 68, 68, 1);
+  background-color: rgba(206, 135, 135, 0.5);
+}

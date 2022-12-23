@@ -1,0 +1,48 @@
+.sectionsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin-top: 3em
+}
+
+.estimate_informations_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.estimate_informations_block_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 0.5em;
+    width: 70%;
+}
+
+.estimate_informations_block_label {
+    font-weight: 600;
+    width: 20%;
+}
+
+.estimate_informations_block_content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.summary_estimate_section_inventory_container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    width: 100%;
+}
+
+.summary_estimate_section_inventory_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary_estimate_section_inventory_item_name {
+    font-weight: bold;
+}

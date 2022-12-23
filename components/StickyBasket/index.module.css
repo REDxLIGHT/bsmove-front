@@ -1,0 +1,55 @@
+.basket_container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  color: #FFF;
+  background-color: rgb(56, 199, 152);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  column-gap: 1em;
+  padding: 0 10%;
+  min-height: 6em;
+  z-index: 9999;
+}
+
+.basket_left_part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.basket_informations {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding-left: 1em;
+}
+
+.basket_informations_title {
+  cursor: pointer;
+}
+
+.basket_informations_content {
+  font-size: 80%;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.basket_right_part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+}
+
+.basket_total_price {
+  width: 100%;
+  padding-right: 1em;
+}
+
+.basket_action {
+  z-index: 90000;
+  width: 100%;
+}

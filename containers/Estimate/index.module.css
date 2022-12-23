@@ -1,0 +1,213 @@
+@media screen and (max-width: 750px) {
+  .estimate_page_content_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    row-gap: 10%;
+    height: 100%;
+    row-gap: 1.5em;
+  }
+
+  .estimate_page_container {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    width: 100%;
+    height: 100%;
+  }
+  .estimate_page_header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .estimate_page_left_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  .estimate_page_right_container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .estimate_page_action_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .estimate_page_action_component {
+    width: 80%;
+  }
+  .estimate_page_content_section_help_action_container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .estimate_confirmation_actions_container {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 2em;
+  }
+}
+@media screen and (min-width: 750px) {
+  .estimate_page_content_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    min-height: 50vh;
+  }
+
+  .estimate_page_container {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    row-gap: 1em;
+  }
+
+  .estimate_page_header {
+    width: 50%;
+  }
+  
+  .estimate_page_left_container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+    row-gap: 1.5em;
+  }
+  
+  .estimate_page_right_container {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .estimate_page_action_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .estimate_page_action_component {
+    width: 50%;
+  }
+  .estimate_confirmation_actions_container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 2em;
+  }
+  .estimate_page_content_section_help_action_container {
+    /* padding: 0 2em; */
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
+  }
+}
+
+.estimate_page_sections_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  row-gap: 1em;
+}
+
+.estimate_page_content_section_help_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1.5em;
+  padding: 1em;
+  width: 80%;
+  height: 100%;
+  min-height: 15em;
+  background-color: rgba(248, 250, 252, 1);
+  border-radius: 8px;
+}
+
+.estimate_page_content_section_help_title {
+  font-weight: 600;
+}
+
+.estimate_page_content_section_help_content {
+  font-weight: 600;
+}
+
+.estimate_section_container {
+  width: 100%;
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 8px;
+}
+
+.estimate_section_component {
+  padding: 1em;
+}
+
+.estimate_section_title {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.estimate_section_content {
+  padding: 1em 0;
+}
+
+.estimate_page_subtitle {
+  color: rgba(71, 85, 105, 1);
+}
+
+.estimate_arrival_date_information_section_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.estimate_departure_location_information_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+
+.estimate_departure_location_information_input_container {
+  width: 60%;
+}
+
+.estimate_departure_location_information_select_options_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-flow: row wrap;
+  position: relative;
+  align-content: flex-start;
+}
+
+.estimate_departure_location_information_select_options_container > * {
+  flex: 1 0;
+}

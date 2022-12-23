@@ -1,0 +1,10 @@
+.dashboard_container_header_wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5rem;
+  width: 100%;
+}
+
+.dashboard_container_header_button_wrapper {
+
+}

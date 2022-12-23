@@ -1,0 +1,112 @@
+@media screen and (max-width: 750px) {
+  .estimate_page_sections_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    row-gap: 1em;
+  }
+  .estimate_inventory_volume_section_action {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .estimate_inventory_volume_section_action_volume_known {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    align-items: flex-end;
+    width: 50%;
+  }
+
+  .inventory_section_description {
+    color: rgba(100, 116, 139, 1);
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 751px) {
+  .estimate_page_sections_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    row-gap: 1em;
+  }
+  .estimate_inventory_volume_section_action {
+    width: 50%;
+    margin: 1em 0;
+  }
+
+  .estimate_inventory_volume_section_action_volume_known {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    align-items: flex-end;
+  }
+
+  .inventory_section_description {
+    color: rgba(100, 116, 139, 1);
+    font-size: 0.8em;
+    width: 70%;
+  }
+}
+
+.estimate_inventory_volume_section_subtitle {
+  color: rgba(100, 116, 139, 1);
+}
+
+.inventory_heavy_objects_sections_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.inventory_heavy_objects_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.estimate_page_inventory_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+}
+
+.inventory_section_label {
+  font-weight: 600;
+}
+
+.mounting_type_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mounting_type_sections_container {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+}
+
+.furnitures_buy_items_grid {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.furnitures_buy_items_grid_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1em;
+  row-gap: 1em;
+  padding: 0.5em;
+}

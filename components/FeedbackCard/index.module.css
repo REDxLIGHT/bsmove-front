@@ -1,0 +1,24 @@
+.feedback_user_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.feedback_user_infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.feedback_user_name {
+  font-weight: 600;
+}
+
+.feedback_content {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}

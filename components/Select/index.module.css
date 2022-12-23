@@ -1,0 +1,29 @@
+@media screen and (max-width: 450px) {
+  .select_form_control_container > label {
+    font-size: 80%;
+    line-height: 2.5em;
+    display: flex;
+    width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .select_form_control_container > label {
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 80%;
+    line-height: 1.5em;
+  }
+}
+
+.select_form_control_container {
+  min-width: 8em;
+  height: 70%;
+  width: 100%;
+  max-width: 30%;
+}
