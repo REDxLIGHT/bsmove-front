@@ -7,7 +7,7 @@ import Moving from './Moving';
 import VehicleRent from './VehicleRent';
 import FurnituresBuy from './FurnituresBuy';
 import styles from './index.module.css';
-import { Fade } from '@material-ui/core';
+import { Fade } from '@mui/material';
 import { useCustomer } from '../../../hooks/customer';
 
 const ProfileSections = ({ tabValue = 0 }) => {

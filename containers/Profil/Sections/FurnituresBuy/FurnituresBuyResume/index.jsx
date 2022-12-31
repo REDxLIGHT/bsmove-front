@@ -1,6 +1,6 @@
 import React from 'react';
-import { Divider } from '@material-ui/core';
-import Image from 'next/image'
+import { Divider } from '@mui/material';
+import Image from "next/legacy/image";
 import { formatDate, getOrderStatus } from '../../../../../helpers/functions';
 import SectionContainer from '../../section';
 

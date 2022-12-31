@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 import messages from './messages';
 import styles from './index.module.css';

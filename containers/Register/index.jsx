@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { bool, func, object } from 'prop-types';
-import { FormControlLabel } from '@material-ui/core';
+import { FormControlLabel } from '@mui/material';
 import Link from 'next/link';
 import { useFormik, Field, FormikProvider } from 'formik';
 

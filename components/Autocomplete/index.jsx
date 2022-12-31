@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Autocomplete as MUIAutocomplete } from '@material-ui/lab';
-import { TextField } from '@material-ui/core';
+import React from 'react';
+import MUIAutocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 import styles from './index.module.css';
 

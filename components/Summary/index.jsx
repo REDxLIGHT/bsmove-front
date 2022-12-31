@@ -1,7 +1,7 @@
 import React from 'react';
-import Divider from '@material-ui/core/Divider';
+import Divider from '@mui/material/Divider';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import { useBasket } from '../../hooks/basket';
 import Subtitle from '../Texts/Subtitle';

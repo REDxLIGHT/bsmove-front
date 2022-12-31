@@ -4,7 +4,6 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-// import { debounce } from '../helpers/functions';
 import { debounce } from 'lodash';
 
 const GlobalContext = createContext({

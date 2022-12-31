@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import Image from "next/legacy/image";
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 //
 import StickyBasket from '../../components/StickyBasket';
 import FurnitureCard from '../../components/FurnitureCard';
 import Subtitle from '../../components/Texts/Subtitle.jsx';
 
-import Button from '../../components/Button';
 import { useAlert } from '../../hooks/alert';
 import { useLoading } from '../../hooks/loading';
 import api from '../../helpers/api';
@@ -182,9 +181,6 @@ const FurnituresBuyContainer = () => {
         <div className={styles.furnitures_buy_footer_content}>
           <div className={styles.furnitures_buy_footer_title}>{messages?.footer?.title}</div>
           <div className={styles.furnitures_buy_footer_subtitle}>{messages?.footer?.subtitle}</div>
-          <div className={styles.furnitures_buy_footer_action_container}>
-            <Button outlined color='rgb(255, 255, 255)' backgroundColor='transparent'>{messages?.footer?.action}</Button>
-          </div>
         </div>
       </div>
     </div>

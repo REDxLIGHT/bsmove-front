@@ -2,8 +2,8 @@ import React from 'react';
 import { node, string } from 'prop-types';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Slide from '@material-ui/core/Slide';
-import Paper from '@material-ui/core/Paper';
+import Slide from '@mui/material/Slide';
+import Paper from '@mui/material/Paper';
 
 import Routes from '../../helpers/routes.js';
 import Logo from '../../components/Logo';

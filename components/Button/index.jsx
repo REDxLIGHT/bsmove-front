@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MUIButton from '@material-ui/core/Button';
+import MUIButton from '@mui/material/Button';
 import LoadingComponent from '../LoadingComponent';
 
 const S = {};
@@ -50,7 +50,7 @@ S.ButtonLabel = styled.span`
 function Button({ type, onClick, loading = false, outlined, disabled = false, fullWidth = true, children, ...rest }) {
   return (
     <S.Container>
-      <S.Button type={type} onClick={onClick} disableFocusRipple $outlined={outlined} disabled={disabled} fullWidth={fullWidth} {...rest}>
+      <S.Button type={type} onClick={onClick} disableFocusRipple $outlined={outlined} disabled={disabled} fullWidth={fullWidth} {...rest} style={{ color: rest.$color || 'inherit' }}>
         {loading ?
           <LoadingComponent secondary />
           : <S.ButtonLabel $outlined={outlined} disabled={disabled} {...rest}>{children}</S.ButtonLabel>

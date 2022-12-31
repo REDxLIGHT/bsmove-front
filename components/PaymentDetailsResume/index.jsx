@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { capitalize, Dialog } from '@material-ui/core';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { capitalize, Dialog } from '@mui/material';
 
 
 import { getShortExpiry } from '../../helpers/functions';
@@ -51,7 +51,7 @@ const PaymentDetailsResumeComponent = ({ setPaymentMethod, paymentMethod: {
         <span>{getShortExpiry(exp_month, exp_year)}</span>
         <span>{capitalize(brand) || ''}</span>
         <div className={styles.payment_details_resume_action_container}>
-          <Button onClick={handleDeleteDialog} marginLabel='0 20%' outlined color='rgba(239, 68, 68, 1)'>
+          <Button onClick={handleDeleteDialog} marginLabel='0 20%' outlined $color='rgba(239, 68, 68, 1)'>
             <div className={styles.payment_details_resume_action_label}>
               <div>{messages.action.delete}</div>
               <DeleteForeverIcon fontSize='small' />

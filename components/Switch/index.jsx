@@ -1,5 +1,5 @@
 import React from 'react';
-import MUISwitch from '@material-ui/core/Switch';
+import MUISwitch from '@mui/material/Switch';
 
 import styles from './index.module.css';
 

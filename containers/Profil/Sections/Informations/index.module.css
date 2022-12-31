@@ -17,7 +17,7 @@
 
 .section_action_container {
   max-width: 75%;
-  width: 75%,
+  width: 75%;
 }
 
 .profil_password_form_grid {
@@ -28,18 +28,18 @@
   grid-template-rows: auto;
   column-gap: 10%;
   row-gap: 2em;
-  grid-template-areas: "oldp none"
-  "newp confirmp";
+  grid-template-areas: "old none"
+  "new confirm";
 }
 
-.password_form_oldp_area {
-  grid-area: 'oldp';
+.password_form_old_area {
+  grid-area: 'old';
 }
 
-.password_form_newp_area {
-  grid-area: 'newp';
+.password_form_new_area {
+  grid-area: 'new';
 }
 
-.password_form_confirmp_area {
-  grid-area: 'confirmp';
+.password_form_confirm_area {
+  grid-area: 'confirm';
 }

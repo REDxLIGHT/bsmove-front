@@ -1,5 +1,5 @@
 import React from 'react';
-import MUITab from '@material-ui/core/Tab';
+import MUITab from '@mui/material/Tab';
 
 export default function Tab({ label, children }) {
   return (

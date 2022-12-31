@@ -1,5 +1,5 @@
 import React from 'react';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useRouter } from 'next/router';
 import { useBasket } from '../../hooks/basket';
 
@@ -30,7 +30,7 @@ const StickyBasket = () => {
       <div className={styles.basket_right_part}>
         <div className={styles.basket_total_price}>{`${messages.total}${totalPrice || 0}€`}</div>
         <div className={styles.basket_action}>
-          <Button onClick={redirectToBasket} padding="0 1em" outlined color='rgba(56, 199, 152, 1)' backgroundColor='rgba(255, 255, 255, 1)'>{messages.action}</Button>
+          <Button onClick={redirectToBasket} padding="0 1em" outlined $backgroundColor='rgba(255, 255, 255, 1)'>{messages.action}</Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Cookies from 'js-cookie';
 
 import Routes from '../../helpers/routes';

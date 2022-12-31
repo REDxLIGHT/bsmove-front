@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Card from '@material-ui/core/Card';
-import Avatar from '@material-ui/core/Avatar';
-import Divider from '@material-ui/core/Divider';
-import CardContent from '@material-ui/core/CardContent';
+import Card from '@mui/material/Card';
+import Avatar from '@mui/material/Avatar';
+import Divider from '@mui/material/Divider';
+import CardContent from '@mui/material/CardContent';
 
 import styles from './index.module.css';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MUICard from '@material-ui/core/Card';
+import MUICard from '@mui/material/Card';
 
 import styles from './index.module.css'
 

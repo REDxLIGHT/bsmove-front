@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Radio from '@material-ui/core/Radio';
+import Radio from '@mui/material/Radio';
 
 const S = {};
 

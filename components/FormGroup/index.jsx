@@ -1,12 +1,12 @@
 import React from 'react';
 import Radio from '../Radio';
-import { FormControl, FormControlLabel, FormLabel, RadioGroup } from '@material-ui/core';
+import { FormControl, FormControlLabel, FormLabel, RadioGroup } from '@mui/material';
 
 import styles from './index.module.css';
 
 const FormGroup = ({ name, label, options = [], onChange, currentValue, defaultValue = 0 }) => {
   return (
-    <FormControl component="fieldset">
+    <FormControl variant="standard" component="fieldset">
       {label ? <FormLabel className={styles.radio_legend}>{label}</FormLabel> : null}
       <RadioGroup aria-label={name} name={name} value={currentValue} defaultValue={defaultValue} onChange={onChange} className={styles.radio_buttons_container}>
         {options.map((option => (
@@ -14,7 +14,7 @@ const FormGroup = ({ name, label, options = [], onChange, currentValue, defaultV
         )))}
       </RadioGroup>
     </FormControl>
-  )
+  );
 }
 
 export default FormGroup;

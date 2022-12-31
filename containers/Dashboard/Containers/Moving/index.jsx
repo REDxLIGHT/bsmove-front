@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import { Divider, makeStyles } from '@material-ui/core';
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import { Divider } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useRouter } from 'next/router';
 
 import { Subtitle } from '../../../../components/Texts';
@@ -16,40 +17,23 @@ import styles from './index.module.css';
 import { formatDate } from '../../../../helpers/functions';
 import Routes from '../../../../helpers/routes';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: 0,
-    textTransform: 'capitalize',
-    fontSize: '1rem',
-    color: theme.colors.dark,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    borderBottom: '1px solid rgba(203, 213, 225, 1)',
-    width: '100%',
-  },
-  flexContainer: {
-    justifyContent: 'flex-start',
-  },
-  indicator: {
-    backgroundColor: props => (!props.noUnderline ? theme.colors.mainGreen : 'transparent'),
-    // bottom: 0,
-  },
-}));
+const S = {}
 
-const useTabStyles = makeStyles(theme => ({
-  root: {
-    color: theme.colors.dark,
-    fontWeight: 600,
-    fontFamily: 'proxima-nova',
-    fontSize: '80%',
-    textAlign: 'left',
+S.Tabs = styled(Tabs)({
+  padding: 0,
+  textTransform: 'capitalize',
+  fontSize: '1rem',
+  color: 'rgb(27, 32, 50)',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
+  borderBottom: '1px solid rgba(203, 213, 225, 1)',
+  width: '100%',
+  '& .MuiTabs-flexContainer': {
+      justifyContent: 'flex-start',
   },
-  selected: {
-    color: theme.colors.mainGreen,
-  },
-}));
+});
 
 const DashboardMovingHeader = () => (
   <div className={styles.dashboard_containers_moving_header}>
@@ -64,19 +48,49 @@ const DashboardMovingHeader = () => (
 const DashboardMovingTabs = ({
   activeTab = 0, handleActiveTabChange = () => {},
 }) => {
-  const classes = useStyles();
-  const tabClasses = useTabStyles()
   return (
     <div className={styles.dashboard_containers_moving_categories_tabs}>
-      <Tabs
+      <S.Tabs
         value={activeTab}
         onChange={handleActiveTabChange}
-        classes={classes}
+        sx={{
+          '& .MuiTabs-indicator': {
+            backgroundColor: props => (!props.noUnderline ? 'rgb(56, 199, 152)' : 'rgb(56, 199, 152)'),
+          },
+        }}
+        // classes={classes}
       >
-        <Tab label={messages.tabs.new.label} classes={tabClasses} />
-        <Tab label={messages.tabs.ongoing.label} classes={tabClasses}/>
-        <Tab label={messages.tabs.finished.label} classes={tabClasses}/>
-      </Tabs>
+        <Tab label={messages.tabs.new.label}  sx={{
+            color: 'rgb(27, 32, 50)',
+            fontWeight: 600,
+            fontFamily: 'proxima-nova',
+            fontSize: '80%',
+            textAlign: 'left',
+            '& .MuiTab-selected': {
+              color: 'rgb(56, 199, 152)'
+            }
+        }} />
+        <Tab label={messages.tabs.ongoing.label} sx={{
+            color: 'rgb(27, 32, 50)',
+            fontWeight: 600,
+            fontFamily: 'proxima-nova',
+            fontSize: '80%',
+            textAlign: 'left',
+            '& .MuiTab-selected': {
+              color: 'rgb(56, 199, 152)'
+            }
+        }} />
+        <Tab label={messages.tabs.finished.label} sx={{
+            color: 'rgb(27, 32, 50)',
+            fontWeight: 600,
+            fontFamily: 'proxima-nova',
+            fontSize: '80%',
+            textAlign: 'left',
+            '& .MuiTab-selected': {
+              color: 'rgb(56, 199, 152)'
+            }
+        }} />
+      </S.Tabs>
     </div>
   )
 }

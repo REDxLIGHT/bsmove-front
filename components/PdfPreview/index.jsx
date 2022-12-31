@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { makeStyles } from '@material-ui/core';
 
 import messages from './messages';
 import LoadingComponent from '../LoadingComponent';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.worker.js`;
-
-const usePageStyles = makeStyles(theme => ({
-  page: {
-    width: '100%',
-  },
-}));
 
 const S = {};
 
@@ -68,7 +61,7 @@ const PdfPreview = ({ base64 }) => {
         )}
       >
         <Page
-          className={pageStyles.page}
+            style={{ width: '100%' }}
           pageNumber={pageNumber}
         />
       </Document>

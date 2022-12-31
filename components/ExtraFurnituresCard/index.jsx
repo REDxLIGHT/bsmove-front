@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
-import InfoIcon from '@material-ui/icons/Info';
-import IconButton from '@material-ui/core/IconButton';
+import Image from "next/legacy/image";
+import InfoIcon from '@mui/icons-material/Info';
+import IconButton from '@mui/material/IconButton';
 
 import { useBasket } from '../../hooks/basket';
 import { findItemQuantityInBasket, isObjectEmpty } from '../../helpers/functions';

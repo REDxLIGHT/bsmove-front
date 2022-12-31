@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import Fade from '@material-ui/core/Fade';
+import Fade from '@mui/material/Fade';
 
 import Header from '../Header';
 import LoadingComponent from '../LoadingComponent';

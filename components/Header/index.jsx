@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import IconButton from '@material-ui/core/IconButton';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import MenuIcon from '@material-ui/icons/Menu';
-import Divider from '@material-ui/core/Divider';
+import IconButton from '@mui/material/IconButton';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
+import Divider from '@mui/material/Divider';
 import { useRouter } from 'next/router';
-import { Collapse, Drawer, List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from '@material-ui/core';
-import { ArrowDropDown, ExpandLess } from '@material-ui/icons';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import { Collapse, Drawer, List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
+import { ArrowDropDown, ExpandLess } from '@mui/icons-material';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 import messages from './messages';
 import styles from './index.module.css';
@@ -54,22 +54,28 @@ S.Divider = styled(Divider)`
 `;
 
 const DesktopHeader = ({ basket, handleCartButton, handleProfilButton }) => {
-  return (
-    <>
-      <S.LeftHeader>{messages.help}</S.LeftHeader>
-      <S.Divider orientation="vertical" />
-      <S.RightHeader>
-        <IconButton className={styles.header_icon} id="header-profil-icon-button" onClick={handleProfilButton}>
-          <PersonOutlineIcon />
-        </IconButton>
-        <IconButton className={styles.header_icon} id="header-cart-icon-button" onClick={handleCartButton}>
-          <Badge count={basket?.totalItems || undefined}>
-            <ShoppingCartOutlinedIcon />
-          </Badge>
-        </IconButton>
-      </S.RightHeader>
-    </>
-  );
+  return <>
+    <S.LeftHeader>{messages.help}</S.LeftHeader>
+    <S.Divider orientation="vertical" />
+    <S.RightHeader>
+      <IconButton
+        className={styles.header_icon}
+        id="header-profil-icon-button"
+        onClick={handleProfilButton}
+        size="large">
+        <PersonOutlineIcon />
+      </IconButton>
+      <IconButton
+        className={styles.header_icon}
+        id="header-cart-icon-button"
+        onClick={handleCartButton}
+        size="large">
+        <Badge count={basket?.totalItems || undefined}>
+          <ShoppingCartOutlinedIcon />
+        </Badge>
+      </IconButton>
+    </S.RightHeader>
+  </>;
 }
 
 const MobileHeader = ({ basket, handleCartButton, handleProfilButton }) => {
@@ -97,75 +103,85 @@ const MobileHeader = ({ basket, handleCartButton, handleProfilButton }) => {
     return router.push(route);
   }
 
-  return (
-    <>
-      <div className={styles.header_mobile_container}>
-        <IconButton className={styles.header_icon} id="header-menu-icon-button" onClick={handleMenuOpen}>
-          <MenuIcon fontSize="small" />
-        </IconButton>
-        <div className={styles.header_mobile_logo_container}>
-          <div className={styles.header_mobile_logo_component}>
-            <Logo />
-          </div>
+  return <>
+    <div className={styles.header_mobile_container}>
+      <IconButton
+        className={styles.header_icon}
+        id="header-menu-icon-button"
+        onClick={handleMenuOpen}
+        size="large">
+        <MenuIcon fontSize="small" />
+      </IconButton>
+      <div className={styles.header_mobile_logo_container}>
+        <div className={styles.header_mobile_logo_component}>
+          <Logo />
         </div>
-        <S.RightHeader>
-          <IconButton className={styles.header_icon} id="header-profil-icon-button" onClick={handleProfilButton}>
-            <PersonOutlineIcon fontSize="small" />
-          </IconButton>
-          <IconButton className={styles.header_icon} id="header-cart-icon-button" onClick={handleCartButton}>
-            <Badge count={basket?.totalItems || undefined}>
-              <ShoppingCartOutlinedIcon fontSize="small" />
-            </Badge>
-          </IconButton>
-        </S.RightHeader>
       </div>
-      <SwipeableDrawer
-        classes={{ paper: styles.header_mobile_menu_container }}
-        // className={styles.header_mobile_menu_container}
-        anchor="left"
-        open={menuOpen}
-        onClose={handleMenuOpen}
-      >
-        <div>
-          <List>
-            <ListItem button onClick={handleSubmenuOpen}>
-              <ListItemText className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.title} />
-              <ListItemIcon>
-                {submenuOpen ? <ExpandLess /> : <ExpandMore />}
-              </ListItemIcon>
-            </ListItem>
-            <Collapse in={submenuOpen} timeout="auto" unmountOnExit>
-              <List disablePadding className={styles.header_drawer_submenu_container}>
-                <ListItem>
-                  <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.moving} />
-                </ListItem>
-                <ListItem>
-                  <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.rentVehicles} />
-                </ListItem>
-                <ListItem>
-                  <Link href={Routes.FURNITURES_BUY_PAGE}>
-                    <ListItemText onClick={() => handleRedirection(Routes.FURNITURES_BUY_PAGE)} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.buyFurnitures} />
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.warehouse} />
-                </ListItem>
-              </List>
-            </Collapse>
-            <ListItem>
-              <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.advices} />
-            </ListItem>
-            <ListItem>
-              <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.news} />
-            </ListItem>
-            <ListItem>
-              <ListItemText onClick={() => handleRedirection(Routes.CONTACT_PAGE)} className={styles.header_drawer_category_label} primary={messages.mobile.categories.contact} />
-            </ListItem>
-          </List>
-        </div>
-      </SwipeableDrawer>
-  </>
-  );
+      <S.RightHeader>
+        <IconButton
+          className={styles.header_icon}
+          id="header-profil-icon-button"
+          onClick={handleProfilButton}
+          size="large">
+          <PersonOutlineIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          className={styles.header_icon}
+          id="header-cart-icon-button"
+          onClick={handleCartButton}
+          size="large">
+          <Badge count={basket?.totalItems || undefined}>
+            <ShoppingCartOutlinedIcon fontSize="small" />
+          </Badge>
+        </IconButton>
+      </S.RightHeader>
+    </div>
+    <SwipeableDrawer
+      classes={{ paper: styles.header_mobile_menu_container }}
+      // className={styles.header_mobile_menu_container}
+      anchor="left"
+      open={menuOpen}
+      onClose={handleMenuOpen}
+    >
+      <div>
+        <List>
+          <ListItem button onClick={handleSubmenuOpen}>
+            <ListItemText className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.title} />
+            <ListItemIcon>
+              {submenuOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemIcon>
+          </ListItem>
+          <Collapse in={submenuOpen} timeout="auto" unmountOnExit>
+            <List disablePadding className={styles.header_drawer_submenu_container}>
+              <ListItem>
+                <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.moving} />
+              </ListItem>
+              <ListItem>
+                <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.rentVehicles} />
+              </ListItem>
+              <ListItem>
+                <Link href={Routes.FURNITURES_BUY_PAGE}>
+                  <ListItemText onClick={() => handleRedirection(Routes.FURNITURES_BUY_PAGE)} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.buyFurnitures} />
+                </Link>
+              </ListItem>
+              <ListItem>
+                <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.services.subCategories.warehouse} />
+              </ListItem>
+            </List>
+          </Collapse>
+          <ListItem>
+            <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.advices} />
+          </ListItem>
+          <ListItem>
+            <ListItemText onClick={handleUnavailableRoute} className={styles.header_drawer_category_label} primary={messages.mobile.categories.news} />
+          </ListItem>
+          <ListItem>
+            <ListItemText onClick={() => handleRedirection(Routes.CONTACT_PAGE)} className={styles.header_drawer_category_label} primary={messages.mobile.categories.contact} />
+          </ListItem>
+        </List>
+      </div>
+    </SwipeableDrawer>
+</>;
 }
 
 function Header() {

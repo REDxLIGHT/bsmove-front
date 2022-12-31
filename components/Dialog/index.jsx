@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, func, node, string } from 'prop-types';
-import MUIDialog from '@material-ui/core/Dialog';
+import MUIDialog from '@mui/material/Dialog';
 
 const Dialog = ({ open, title, handleClose, children }) => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import FormControl from '@material-ui/core/FormControl';
+import FormControl from '@mui/material/FormControl';
 import {loadStripe} from '@stripe/stripe-js';
 import {
   Elements, CardNumberElement, CardCvcElement, CardExpiryElement, useStripe, useElements,

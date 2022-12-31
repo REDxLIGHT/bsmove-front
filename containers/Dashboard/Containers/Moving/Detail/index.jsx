@@ -6,7 +6,7 @@ import Button from '../../../../../components/Button';
 
 import styles from './index.module.css';
 import messages from './messages';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Routes from '../../../../../helpers/routes';
 
 const DashboardMovingDetailCardInformations = ({

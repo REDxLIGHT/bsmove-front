@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Popover, IconButton, Divider } from '@material-ui/core';
-import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
+import { Popover, IconButton, Divider } from '@mui/material';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import LoadingComponent from '../../../../components/LoadingComponent';
 import Badge from '../../../../components/Badge';
 import styles from './index.module.css';

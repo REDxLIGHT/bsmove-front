@@ -5,7 +5,7 @@ import Counter from "../../../../components/Counter";
 import {mountingExtraFurnituresOptions, mountingHelpNeededOptions} from "../constants";
 import EstimateSection from "../../section";
 import FormGroup from "../../../../components/FormGroup";
-import {Fade} from "@material-ui/core";
+import {Fade} from "@mui/material";
 import api from "../../../../helpers/api";
 import ExtraFurnitureCard from "../../../../components/ExtraFurnituresCard";
 import {useEstimate} from "../../../../hooks/estimate";

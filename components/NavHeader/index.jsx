@@ -1,14 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import { number } from 'prop-types';
-import { makeStyles, MenuItem, Step, StepLabel, Stepper } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
+import { MenuItem, Step, StepLabel, Stepper } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 import clsx from 'clsx';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import styled from 'styled-components';
-import { ChevronRight } from '@material-ui/icons';
+import { ChevronRight } from '@mui/icons-material';
 
 import messages from './messages';
 import Logo from '../Logo';
@@ -18,75 +17,6 @@ import Menu from '../Menu';
 import Routes from '../../helpers/routes';
 import { useGlobal } from '../../hooks/global';
 import {useAlert} from "../../hooks/alert";
-
-const S = {};
-
-S.Step = styled(Step)`
-  color: red;
-`
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: 0,
-    textTransform: 'capitalize',
-    width: '100vw',
-    fontSize: '1rem',
-    backgroundColor: theme.colors.white,
-    color: theme.colors.dark,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-  },
-  flexContainer: {
-    justifyContent: 'flex-end',
-  },
-  indicator: {
-    backgroundColor: props => (!props.noUnderline ? theme.colors.mainGreen : 'transparent'),
-  },
-}));
-
-const useStepperStyles = makeStyles(theme => ({
-  root: {
-    color: 'rgba(183, 186, 194, 1)',
-    fontSize: '1.2rem',
-    "&$active": {
-      color: theme.colors.mainGreen,
-    },
-    "&$completed": {
-      color: theme.colors.mainGreen,
-    },
-    "&$disabled": {
-      color: 'rgba(183, 186, 194, 1)',
-    }
-  },
-  disabled: {},
-  completed: {},
-  active: {},
-  alternativeLabel: {
-    margin: '0 !important',
-    fontSize: '100%',
-  },
-}));
-
-const useStepperClasses = makeStyles(theme => ({
-  root: {
-    padding: '0px !important',
-  }
-}))
-
-const useTabStyles = makeStyles(theme => ({
-  root: {
-    color: theme.colors.dark,
-    fontWeight: 600,
-    fontFamily: 'proxima-nova',
-    fontSize: '80%',
-    minWidth: '8rem'
-  },
-  selected: {
-    color: theme.colors.mainGreen,
-  },
-}));
 
 const categories = [
   { name: 'estimate/details', label: 'Déménagement' },
@@ -155,11 +85,33 @@ const ServicesMenu = ({ label = '', handleOpen, open, anchorRef }) => {
   )
 }
 
+const S = {};
+
+S.Step = styled(Step)`
+  color: red;
+`
+
+S.Tabs = styled(Tabs)({
+  textTransform: 'capitalize',
+  width: '100vw',
+  fontSize: '1rem',
+  backgroundColor: '#FFFFFF',
+  color: '#000000',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-end',
+  justifyContent: 'flex-end',
+  '& .MuiTabs-flexContainer': {
+    justifyContent: 'flex-end',
+  },
+  '& .MuiTabs-indicator': {
+    backgroundColor: 'transparent',
+  },
+});
+
 const PrimaryNavHeader = ({ initialTab }) => {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
-  const classes = useStyles({ noUnderline: true });
-  const tabClasses = useTabStyles();
   const [value, setValue] = useState(initialTab || 0);
   const { handleAlertComingSoon } = useAlert();
 
@@ -192,19 +144,59 @@ const PrimaryNavHeader = ({ initialTab }) => {
       <div className={styles.primary_logo_container}>
         <Logo />
       </div>
-      <Tabs
+      <S.Tabs
         value={value}
         onChange={handleChange}
-        classes={classes}
         TabIndicatorProps={{
           id: value === 0 ? 'service-menu_tab-indicator' : undefined,
         }}
       >
-        <Tab id='service-menu' onClick={handleOpen} label={<ServicesMenu open={open} handleOpen={handleOpen} anchorRef={anchorRef} label={messages.services} />} classes={tabClasses} />
-        <Tab label={<div className={styles.menu_label_span}>{messages.advises}</div>} classes={tabClasses}/>
-        <Tab label={<div className={styles.menu_label_span}>{messages.news}</div>} classes={tabClasses}/>
-        <Tab label={<div className={styles.menu_label_span}>{messages.contact}</div>} classes={tabClasses}/>
-      </Tabs>
+        <Tab id='service-menu' onClick={handleOpen} label={<ServicesMenu open={open} handleOpen={handleOpen} anchorRef={anchorRef} label={messages.services} />}
+             sx={{
+                 color: '#000000',
+                 fontWeight: 600,
+                 fontFamily: 'proxima-nova',
+                 fontSize: '80%',
+                 minWidth: '8rem',
+                 '& Mui-Selected:': {
+                     color: 'rgb(56, 199, 152)',
+                 },
+             }}
+        />
+        <Tab label={<div className={styles.menu_label_span}>{messages.advises}</div>}
+             sx={{
+                color: '#000000',
+                fontWeight: 600,
+                fontFamily: 'proxima-nova',
+                fontSize: '80%',
+                minWidth: '8rem',
+                 '& Mui-Selected:': {
+                  color: 'rgb(56, 199, 152)',
+                },
+             }}/>
+        <Tab label={<div className={styles.menu_label_span}>{messages.news}</div>}
+             sx={{
+                color: '#000000',
+                fontWeight: 600,
+                fontFamily: 'proxima-nova',
+                fontSize: '80%',
+                minWidth: '8rem',
+                '& Mui-Selected:': {
+                  color: 'rgb(56, 199, 152)',
+                },
+             }}/>
+        <Tab label={<div className={styles.menu_label_span}>{messages.contact}</div>}
+             sx={{
+                color: '#000000',
+                fontWeight: 600,
+                fontFamily: 'proxima-nova',
+                fontSize: '80%',
+                minWidth: '8rem',
+               '& Mui-Selected:': {
+                  color: 'rgb(56, 199, 152)',
+                },
+             }}/>
+      </S.Tabs>
       <div className={styles.button_container}>
         <div onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)} className={styles.button_component}>{messages.estimate}</div>
       </div>
@@ -213,8 +205,7 @@ const PrimaryNavHeader = ({ initialTab }) => {
 };
 
 const SecondaryNavHeader = ({ initialStep = 0, steps = [] }) => {
-  const classes = useStepperStyles();
-  const stepperClasses = useStepperClasses();
+  // const classes = useStepperStyles();
   const { global: { screenWidth } } = useGlobal();
 
   return (
@@ -223,10 +214,27 @@ const SecondaryNavHeader = ({ initialStep = 0, steps = [] }) => {
         <Logo />
       </div>
       <div className={styles.secondary_nav_header_stepper}>
-        <Stepper className={stepperClasses.root} activeStep={initialStep} alternativeLabel={screenWidth <= 750 }>
+        <Stepper activeStep={initialStep} alternativeLabel={screenWidth <= 750 }>
           {steps.map((step) => (
             <Step key={step}>
-              <StepLabel classes={{ alternativeLabel: classes.alternativeLabel }} StepIconProps={{ classes }}>{step}</StepLabel>
+              <StepLabel
+                  classes={{ alternativeLabel: 'alternative-label' }}
+                  StepIconProps={{ sx: {
+                      color: 'rgba(183, 186, 194, 1)',
+                      fontSize: '1.2rem',
+                      '& .Mui-active:': {
+                          color: 'rgb(56, 199, 152)',
+                      },
+                      '& .Mui-disabled:': {
+                          color: 'rgba(183, 186, 194, 1)',
+                      },
+                      '& .Mui-completed:': {
+                          color: 'rgb(56, 199, 152)',
+                      },
+                  } }}
+              >
+                {step}
+              </StepLabel>
             </Step>
           ))}
         </Stepper>
@@ -241,7 +249,7 @@ function NavHeader({ auth, initialTab, initialStep = 0, secondary = false, steps
       ? <PrimaryNavHeader initialTab={initialTab} />
       : <SecondaryNavHeader auth={auth} initialStep={initialStep} steps={steps} />
   )
-};
+}
 
 NavHeader.propTypes = {
   initialTab: number,

@@ -157,8 +157,8 @@ const EstimateContainer = ({ step = 0, setStep }) => {
     const distance = await getDistanceWithCoordinates(estimate?.details?.departureInformations?.address, estimate?.details?.arrivalInformations?.address)
     const requestData = mapValuesToEstimateRequest(estimate, customer, { distance });
     const res = await api.post('/Estimates', requestData, { headers: { Authorization: auth.id } })
-    if (res.ok) {
-      router.replace(Routes.HOME_PAGE)
+    if (res?.ok) {
+      await router.replace(Routes.HOME_PAGE)
       clearEstimate()
     }
     else setAlert({ severity: 'error', content: 'Une erreur est survenue lors de l\'envoie du devis.' })
@@ -172,7 +172,7 @@ const EstimateContainer = ({ step = 0, setStep }) => {
   async function handleNextStep() {
     if (step === 1) return setStep(2);
     if (step === 3) return router.push(Routes.HOME_PAGE)
-    router.push(STEPS[step + 1]);
+    await router.push(STEPS[step + 1]);
   }
 
   return (

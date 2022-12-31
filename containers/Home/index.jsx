@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import styled from 'styled-components';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import IconButton from '@material-ui/core/IconButton';
-import Card from '@material-ui/core/Card';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import IconButton from '@mui/material/IconButton';
+import Card from '@mui/material/Card';
 
 import Routes from '../../helpers/routes';
 import Button from '../../components/Button';
@@ -364,7 +364,10 @@ const ArticlePreview = ({ article, technicalIssueAlert }) => (
       <div className={styles.blog_article_content}>{article.content}</div>
       <div className={styles.blog_article_action}>
         <div>{article.action}</div>
-        <IconButton onClick={technicalIssueAlert} className={styles.blog_article_action_icon}>
+        <IconButton
+          onClick={technicalIssueAlert}
+          className={styles.blog_article_action_icon}
+          size="large">
             <ArrowForwardIcon />
         </IconButton>
       </div>

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Cookie from 'js-cookie';
 import { useRouter } from 'next/router';
-import { makeStyles } from '@material-ui/core';
 
 import messages from './messages';
 import styles from './index.module.css';
@@ -12,15 +10,6 @@ import VerticalTabs from '../../components/VerticalTabs';
 
 import ProfilContentSection from './Sections';
 import {useEstimate} from "../../hooks/estimate";
-
-const useStyle = makeStyles({
-  indicator: {
-    bottom: '0px',
-  },
-  flexContainerVertical: {
-    textAlign: 'left',
-  }
-})
 
 const profilTabs = [
   { title: messages.settings.categories.personalInformations, value: 0 },

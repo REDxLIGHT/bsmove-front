@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import IconButton from '@material-ui/core/IconButton'
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import TextField from '@material-ui/core/TextField';
-import {debounce} from "lodash";
+import IconButton from '@mui/material/IconButton'
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import TextField from '@mui/material/TextField';
 
 const S = {};
 
@@ -77,7 +76,7 @@ S.VisibilityContainer = styled.span`
   line-height: 3.5rem;
 `;
 
-S.ErrorContainer = styled.div`
+S.ErrorContainer = styled.span`
   display: flex;
   justify-content: flex-end;
   color: rgb(255, 0, 0);
@@ -87,8 +86,8 @@ const VisibilityContainer = ({ visibility, handleVisibility }) => (
   <S.VisibilityContainer>
     {
       visibility
-        ? <IconButton onClick={handleVisibility}><VisibilityOffIcon fontSize='small' /></IconButton>
-        : <IconButton onClick={handleVisibility}><VisibilityIcon fontSize='small' /></IconButton>
+        ? <IconButton onClick={handleVisibility} size="large"><VisibilityOffIcon fontSize='small' /></IconButton>
+        : <IconButton onClick={handleVisibility} size="large"><VisibilityIcon fontSize='small' /></IconButton>
     }
   </S.VisibilityContainer>
 );

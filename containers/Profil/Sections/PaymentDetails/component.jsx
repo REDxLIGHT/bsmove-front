@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Dialog, IconButton } from '@material-ui/core';
+import { Dialog, IconButton } from '@mui/material';
 import { CardNumberElement } from '@stripe/react-stripe-js';
 import { getCode } from 'country-list';
 
@@ -8,7 +8,7 @@ import CreditCardForm from '../../../../components/CreditCardForm';
 import LoadingComponent from '../../../../components/LoadingComponent';
 import PaymentDetailsResume from '../../../../components/PaymentDetailsResume';
 import { useCustomer } from '../../../../hooks/customer';
-import Close from '@material-ui/icons/Close';
+import Close from '@mui/icons-material/Close';
 
 import { Subtitle } from '../../../../components/Texts';
 import styles from './index.module.css';
@@ -25,7 +25,7 @@ const CreditCardDialog = ({ open, handleDialog, handleSubmit, buttonLabel }) => 
     <div className={styles.credit_card_add_dialog_container}>
       <div className={styles.credit_card_add_dialog_header}>
         <Subtitle>{messages.dialog.title}</Subtitle>
-        <IconButton onClick={handleDialog}>
+        <IconButton onClick={handleDialog} size="large">
           <Close fontSize="small" />
         </IconButton>
       </div>

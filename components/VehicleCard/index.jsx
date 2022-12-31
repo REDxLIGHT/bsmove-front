@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
-import MUICard from '@material-ui/core/Card';
+import Image from "next/legacy/image";
+import MUICard from '@mui/material/Card';
 import styled from 'styled-components';
 
 import styles from './index.module.css';

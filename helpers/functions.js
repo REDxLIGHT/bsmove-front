@@ -40,8 +40,8 @@ export function redirectLogged(auth, router, pathname) {
 // common if connexion doesn't affect the route
 
 export async function handlePageRedirect(cookies = {}, routeType = 'common', location = '', extraCondition = false) {
-  const parsedCustomerCookie = await isObjectEmpty(cookies?.customer) ? {} : JSON.parse(cookies?.customer);
-  const parsedAdminCookie = await isObjectEmpty(cookies?.admin) ? {} : JSON.parse(cookies?.admin)
+  const parsedCustomerCookie = (await isObjectEmpty(cookies?.customer)) ? {} : JSON.parse(cookies?.customer);
+  const parsedAdminCookie = (await isObjectEmpty(cookies?.admin)) ? {} : JSON.parse(cookies?.admin)
   if (extraCondition) {
     return {
       redirect: {

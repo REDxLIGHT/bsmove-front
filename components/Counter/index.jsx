@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
+import IconButton from '@mui/material/IconButton';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 import messages from './messages';
 import styles from './index.module.css';
@@ -18,7 +18,7 @@ const Counter = ({ minValue = 0, maxValue, value = 0, handleInc, handleDec, marg
     <div className="counter-component__furniture_count_container">
       <S.ButtonContainer margin={margin} className="counter-component__furniture_count_buttons_container">
         <div className="counter-component__furniture_count_button">
-          <IconButton disabled={value === minValue} onClick={handleDec}>
+          <IconButton disabled={value === minValue} onClick={handleDec} size="large">
             <RemoveIcon className="counter-component__furniture_icon_style" />
           </IconButton>
         </div>
@@ -26,7 +26,7 @@ const Counter = ({ minValue = 0, maxValue, value = 0, handleInc, handleDec, marg
           {value}
         </div>
         <div className="counter-component__furniture_count_button">
-          <IconButton disabled={maxValue} onClick={handleInc}>
+          <IconButton disabled={maxValue} onClick={handleInc} size="large">
             <AddIcon className="counter-component__furniture_icon_style" />
           </IconButton>
         </div>

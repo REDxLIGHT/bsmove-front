@@ -4,9 +4,9 @@ import api from "../../helpers/api";
 import LoadingComponent from "../LoadingComponent";
 
 import styles from './index.module.css'
-import AddIcon from "@material-ui/icons/Add";
-import IconButton from "@material-ui/core/IconButton";
-import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import IconButton from "@mui/material/IconButton";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const FurnitureListPager = ({
     url = '/Products',
@@ -52,7 +52,7 @@ const FurnitureListPager = ({
                 <FurnitureCard item={item} index={index} />
             ))}
             <div className={styles.pager_page_handler}>
-                <IconButton disabled={page === 1} onClick={handlePrevPage}>
+                <IconButton disabled={page === 1} onClick={handlePrevPage} size="large">
                     <div className={styles.pager_page_button}>
                       <RemoveIcon  />
                     </div>
@@ -60,14 +60,17 @@ const FurnitureListPager = ({
                 <div className={styles.pager_page_button}></div>
                 <div className={styles.pager_page_button}></div>
                 <div className={styles.pager_page_button}></div>
-                <IconButton disabled={page <= itemListCount / nItemPage} onClick={handleNextPage}>
+                <IconButton
+                    disabled={page <= itemListCount / nItemPage}
+                    onClick={handleNextPage}
+                    size="large">
                     <div className={styles.pager_page_button}>
                         <AddIcon  />
                     </div>
                 </IconButton>
             </div>
         </div>
-    )
+    );
 }
 
 export default FurnitureListPager;

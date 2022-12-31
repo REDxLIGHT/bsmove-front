@@ -5,11 +5,11 @@ export function isEmailValid(email) {
 }
 
 export function isLastNameValid(lastName) {
-  return !!lastName.match(/^[a-zA-Z- ]*$/)
+  return !!lastName.match(/^[a-zA-Z- ]*$/);
 }
 
 export function isFirstNameValid(firstName) {
-  return !!firstName.match(/^[a-zA-Z- ]*$/)
+  return !!firstName.match(/^[a-zA-Z- ]*$/);
 }
 
 export function isPasswordValid(password) {

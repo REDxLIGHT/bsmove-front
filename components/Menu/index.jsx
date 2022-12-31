@@ -1,8 +1,8 @@
 import React from 'react';
-import { ClickAwayListener, Fade, Grow, MenuItem, MenuList, Paper, Popper } from '@material-ui/core';
+import { ClickAwayListener, Fade, Grow, MenuItem, MenuList, Paper, Popper } from '@mui/material';
 
 import styles from './index.module.css';
-import { ChevronRight } from '@material-ui/icons';
+import { ChevronRight } from '@mui/icons-material';
 
 const Menu = ({
   open, handleOpen, anchorRef, containerStyle,

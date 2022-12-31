@@ -178,3 +178,8 @@
   overflow: hidden;
   font-size: 12px;
 }
+
+.alternative-label {
+  margin: 0px !important;
+  font-size: 100%;
+}

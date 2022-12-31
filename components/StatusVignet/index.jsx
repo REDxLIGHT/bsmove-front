@@ -11,6 +11,7 @@ S.StatusVignet = styled.div`
   font-size: ${({ fontSize }) => fontSize || 'inherit'};
   font-weight: 600;
   width: 100%;
+  text-align: center;
 `;
 
 const StatusVignet = ({ status = 'incomplete', message, padding = '0em', fontSize }) => {

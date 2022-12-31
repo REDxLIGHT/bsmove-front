@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import CloseIcon from '@material-ui/icons/Close';
-import Dialog from '@material-ui/core/Dialog';
-import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Dialog from '@mui/material/Dialog';
+import IconButton from '@mui/material/IconButton';
 import { useFormik } from 'formik';
 
 import { Subtitle } from '../../components/Texts';
@@ -315,7 +315,7 @@ const DeliveryComponent = () => {
         <div className={styles.dialog_container}>
           <div className={styles.dialog_header}>
           <div className={styles.dialog_header_title}>{messages.dialog[dialogOpen?.dialog].title || ''}</div>
-          <IconButton onClick={() => handleDialogOpen()}>
+          <IconButton onClick={() => handleDialogOpen()} size="large">
             <CloseIcon />
           </IconButton>
           </div>
@@ -331,7 +331,7 @@ const DeliveryComponent = () => {
         </div>
       </Dialog>
     </div>
-  )
+  );
 }
 
 const DeliveryContainer = () => {

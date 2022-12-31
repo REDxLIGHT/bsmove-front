@@ -148,7 +148,7 @@ export const PasswordComponent = () => {
 
   return (
     <form className={styles.profil_password_form_grid} onSubmit={formik.handleSubmit}>
-      <div className={styles.password_form_oldp_area}>
+      <div className={styles.password_form_old_area}>
         <Input
           label={messages.inputs.oldPassword.label}
           placeholder={messages.inputs.oldPassword.placeholder}
@@ -164,7 +164,7 @@ export const PasswordComponent = () => {
         />
       </div>
       <div></div>
-      <div className={styles.password_form_newp_area}>
+      <div className={styles.password_form_new_area}>
         <Input
           label={messages.inputs.newPassword.label}
           placeholder={messages.inputs.newPassword.placeholder}
@@ -179,7 +179,7 @@ export const PasswordComponent = () => {
           type='password'
         />
       </div>
-      <div className={styles.password_form_confirmp_area}>
+      <div className={styles.password_form_confirm_area}>
         <Input
           label={messages.inputs.confirmNewPassword.label}
           placeholder={messages.inputs.confirmNewPassword.placeholder}

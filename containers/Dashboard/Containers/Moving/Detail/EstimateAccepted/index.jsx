@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Fade, FormControlLabel } from '@material-ui/core';
+import { Fade, FormControlLabel } from '@mui/material';
 
 import { useAlert } from '../../../../../../hooks/alert';
 
@@ -13,7 +13,7 @@ import detailStyles from '../index.module.css';
 import messages from './messages';
 import { ALERT } from '../../../../../../helpers/constants';
 import LoadingComponent from '../../../../../../components/LoadingComponent';
-import { ChevronRight } from '@material-ui/icons';
+import { ChevronRight } from '@mui/icons-material';
 import VehicleCard from '../../../../../../components/VehicleCard';
 
 const mockedChiefs = [

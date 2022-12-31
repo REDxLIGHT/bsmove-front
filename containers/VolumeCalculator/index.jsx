@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Dialog, Accordion, AccordionSummary, AccordionDetails, IconButton, Divider } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Close from '@material-ui/icons/Close';
-import DeleteForever from '@material-ui/icons/DeleteForever';
+import { Dialog, Accordion, AccordionSummary, AccordionDetails, IconButton, Divider } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Close from '@mui/icons-material/Close';
+import DeleteForever from '@mui/icons-material/DeleteForever';
 import { add, assoc, constructN, curry, findIndex, map, propEq, values, when } from 'ramda';
 import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
@@ -85,47 +85,45 @@ const VolumeCalculatorRoom = ({
     removeVolumeFromRoom(id, value)
   }
 
-  return (
-    <>
-      <Accordion square={false} className={styles.volume_calculator_page_room_accordion}>
-        <AccordionSummary
-          className={styles.volume_calculator_page_accordion_header}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <div className={styles.volume_calculator_page_accordion_header_content}>
-            <div className={styles.volume_calculator_page_resume_room_name}>{room.name || '[non_defini]'}</div>
-            <IconButton onClick={handleDeleteDialog}>
-              <DeleteForever fontSize="small" />
-            </IconButton>
-          </div>
-        </AccordionSummary>
-        <AccordionDetails className={styles.volume_calculator_page_accordion_content}>
-          {roomList?.map((item, index) => (
-            <>
-              <VolumeCalculatorRoomItem key={item?.id} roomId={room.id} item={item} handleStateInc={handleStateInc} handleStateDec={handleStateDec} />
-              {roomList?.length > index + 1 && <Divider />}
-            </>
-          ))}
-          <div className={styles.volume_autocomplete_container}>
-            <Autocomplete
-              handleChange={addObjectToList}
-              options={objectList}
-              messages={messages.calculator.roomAutocomplete}
-            />
-          </div>
-        </AccordionDetails>
-      </Accordion>
-      <DeleteDialog
-        open={deleteDialog}
-        item={`la pièce "${room.name || '[non_defini]'}"`}
-        onClose={handleDeleteDialog}
-        handleConfirm={() => removeRoomFromList(room)}
-        handleDeny={handleDeleteDialog}
-      />
-    </>
-  )
+  return <>
+    <Accordion square={false} className={styles.volume_calculator_page_room_accordion}>
+      <AccordionSummary
+        className={styles.volume_calculator_page_accordion_header}
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <div className={styles.volume_calculator_page_accordion_header_content}>
+          <div className={styles.volume_calculator_page_resume_room_name}>{room.name || '[non_defini]'}</div>
+          <IconButton onClick={handleDeleteDialog} size="large">
+            <DeleteForever fontSize="small" />
+          </IconButton>
+        </div>
+      </AccordionSummary>
+      <AccordionDetails className={styles.volume_calculator_page_accordion_content}>
+        {roomList?.map((item, index) => (
+          <>
+            <VolumeCalculatorRoomItem key={item?.id} roomId={room.id} item={item} handleStateInc={handleStateInc} handleStateDec={handleStateDec} />
+            {roomList?.length > index + 1 && <Divider />}
+          </>
+        ))}
+        <div className={styles.volume_autocomplete_container}>
+          <Autocomplete
+            handleChange={addObjectToList}
+            options={objectList}
+            messages={messages.calculator.roomAutocomplete}
+          />
+        </div>
+      </AccordionDetails>
+    </Accordion>
+    <DeleteDialog
+      open={deleteDialog}
+      item={`la pièce "${room.name || '[non_defini]'}"`}
+      onClose={handleDeleteDialog}
+      handleConfirm={() => removeRoomFromList(room)}
+      handleDeny={handleDeleteDialog}
+    />
+  </>;
 }
 
 const RoomDialog = ({ open, onClose, handleSubmit }) => {
@@ -141,7 +139,7 @@ const RoomDialog = ({ open, onClose, handleSubmit }) => {
       <div className={styles.room_dialog_container}>
         <div className={styles.room_dialog_header}>
           <Subtitle>{messages.dialog.title}</Subtitle>
-          <IconButton onClick={onClose}>
+          <IconButton onClick={onClose} size="large">
             <Close />
           </IconButton>
         </div>
@@ -165,7 +163,7 @@ const RoomDialog = ({ open, onClose, handleSubmit }) => {
         </div>
       </div>
     </Dialog>
-  )
+  );
 }
 
 const VolumeCalculatorContainer = () => {

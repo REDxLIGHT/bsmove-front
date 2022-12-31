@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { mapObjIndexed, keys, map } from 'ramda';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useRouter } from 'next/router';
 
 import messages from './messages';

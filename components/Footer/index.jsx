@@ -1,7 +1,7 @@
 import React from 'react';
-import LockIcon from '@material-ui/icons/Lock';
-import Image from 'next/image';
-import { Divider } from '@material-ui/core';
+import LockIcon from '@mui/icons-material/Lock';
+import Image from "next/legacy/image";
+import { Divider } from '@mui/material';
 import { string } from 'prop-types';
 
 import messages from './messages';

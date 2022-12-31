@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MUITabs from '@material-ui/core/Tabs';
+import MUITabs from '@mui/material/Tabs';
 
 function Tabs({ children, ...rest }) {
   const [value, setValue] = useState(0);

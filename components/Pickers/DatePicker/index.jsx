@@ -1,12 +1,11 @@
 import React from 'react';
-import DateFnsUtils from '@date-io/date-fns';
 import frLocale from "date-fns/locale/fr";
 
-import {
-  KeyboardDatePicker,
-  MuiPickersUtilsProvider,
-} from '@material-ui/pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers';
 import messages from './messages';
+import {TextField} from "@mui/material";
 
 const DateInput = ({ value, handleChange }) => {
   const today = new Date();
@@ -14,8 +13,8 @@ const DateInput = ({ value, handleChange }) => {
   maxDate.setFullYear(maxDate.getFullYear() + 1);
 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={frLocale}>
-      <KeyboardDatePicker
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <DatePicker
         placeholder='jj/mm/aaaa'
         minDate={today}
         disablePast
@@ -27,8 +26,10 @@ const DateInput = ({ value, handleChange }) => {
         invalidLabel={messages.invalidDateMessage}
         minDateMessage={messages.pastDate}
         maxDateMessage={messages.futureDate}
-        onChange={handleChange} />
-    </MuiPickersUtilsProvider>
+        onChange={handleChange}
+        renderInput={(props) => <TextField label='date input' {...props} />}
+      />
+    </LocalizationProvider>
   );
 }
 

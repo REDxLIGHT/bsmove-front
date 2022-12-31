@@ -1,6 +1,6 @@
 import React from 'react';
-import { Dialog, IconButton } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
+import { Dialog, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 import styles from './index.module.css';
 import messages from './messages';
@@ -15,7 +15,7 @@ const DeleteDialog = ({
       <div className={styles.delete_dialog_container}>
         <div className={styles.delete_dialog_header}>
           <Subtitle>{title}</Subtitle>
-          <IconButton onClick={onClose}>
+          <IconButton onClick={onClose} size="large">
             <CloseIcon />
           </IconButton>
         </div>
@@ -30,7 +30,7 @@ const DeleteDialog = ({
         </div>
       </div>
     </Dialog>
-  )
+  );
 }
 
 export default DeleteDialog;

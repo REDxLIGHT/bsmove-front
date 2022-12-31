@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { pick } from 'ramda';
-import { format } from 'date-fns';
 
-import { ALERT, mockCustomer } from '../../../../helpers/constants';
+import { ALERT } from '../../../../helpers/constants';
 import API from '../../../../helpers/api';
 import Section from '../section';
 import messages from './messages';

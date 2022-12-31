@@ -53,7 +53,8 @@
     width: 60%;
     background-color: #F9FAFB;
     min-height: 32.5em;
-    margin-bottom: 12em;
+    margin-bottom: 10em;
+    padding-bottom: 2em;
   }
 
   .furnitures_buy_description_illustration {
@@ -80,7 +81,7 @@
     padding: 1.25em 0;
     display: flex;
     cursor: pointer;
-    width: 40%;
+    max-width: 60%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

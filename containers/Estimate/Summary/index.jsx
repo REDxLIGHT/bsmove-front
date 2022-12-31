@@ -1,7 +1,7 @@
 import React from 'react';
 import messages from "./messages";
 import EstimateSection from "../section";
-import Fade from "@material-ui/core/Fade";
+import Fade from "@mui/material/Fade";
 
 import styles from './index.module.css';
 import {useEstimate} from "../../../hooks/estimate";

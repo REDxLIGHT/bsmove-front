@@ -1,5 +1,5 @@
 import {useEstimate} from "../../../../hooks/estimate";
-import {Fade, FormControlLabel} from "@material-ui/core";
+import {Fade, FormControlLabel} from "@mui/material";
 import styles from "../index.module.css";
 import React, {useEffect, useState} from "react";
 import {useRouter} from "next/router";

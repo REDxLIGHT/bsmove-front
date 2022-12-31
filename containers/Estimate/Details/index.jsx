@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import { IconButton } from '@material-ui/core';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import { IconButton } from '@mui/material';
 import AsyncSelect from "react-select/async";
 import * as _ from "lodash";
 
@@ -266,7 +266,7 @@ const DepartureInformationsSection = ({ departureInformations, addToEstimateDeta
             <span className={styles.estimate_details_page_parking_permit_link}>
               {messages.sections.details.departure.parkingPermit.link}
             </span>
-            <IconButton onClick={() => {}}>
+            <IconButton onClick={() => {}} size="large">
               <InfoOutlinedIcon fontSize="small" />
             </IconButton>
           </div>
@@ -281,7 +281,7 @@ const DepartureInformationsSection = ({ departureInformations, addToEstimateDeta
         </div>
       </div>
     </EstimateSection>
-  )
+  );
 }
 
 const ArrivalInformationsSection = ({ arrivalInformations, addToEstimateDetailsByKey }) => {
@@ -370,7 +370,7 @@ const ArrivalInformationsSection = ({ arrivalInformations, addToEstimateDetailsB
             <span className={styles.estimate_details_page_parking_permit_link}>
               {messages.sections.details.arrival.parkingPermit.link}
             </span>
-            <IconButton onClick={() => {}}>
+            <IconButton onClick={() => {}} size="large">
               <InfoOutlinedIcon fontSize="small" />
             </IconButton>
           </div>
@@ -385,7 +385,7 @@ const ArrivalInformationsSection = ({ arrivalInformations, addToEstimateDetailsB
         </div>
       </div>
     </EstimateSection>
-  )
+  );
 }
 
 const EstimateDetailsComponent = ({ handleContinue, canContinue = false }) => {
