@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from "../index.module.css";
 import { Tabs, Tab } from "@mui/material";
-import { any, number } from "prop-types";
 import DatePicker from "../../../components/Pickers/DatePicker";
 import { useFormik } from "formik";
 import Counter from "../../../components/Counter";
@@ -24,28 +23,7 @@ import {
 } from "../../../helpers/constants";
 import { useEstimate } from "../../../hooks/estimate";
 import { getMoversPrice } from "../../../helpers/prices";
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && children}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: any,
-  value: any,
-  index: number,
-};
+import TabPanel from "../../../components/TabPanel";
 
 const VehicleRentSearchSectionVehicle = () => {
   const router = useRouter();

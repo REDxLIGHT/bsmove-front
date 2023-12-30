@@ -17,12 +17,8 @@ const ProfileSections = ({ tabValue = 0 }) => {
         {tabValue === 0 && <Informations customer={customer} />}
         {tabValue === 1 && <Address />}
         {tabValue === 2 && <PaymentDetails customer={customer} />}
-        {/*{*/}
-        {/*  tabValue === 3 && <Moving customer={customer} />*/}
-        {/*}*/}
-        {/*{*/}
-        {/*  tabValue === 4 && <VehicleRent customer={customer} />*/}
-        {/*}*/}
+        {tabValue === 3 && <Moving customer={customer} />}
+        {tabValue === 4 && <VehicleRent customer={customer} />}
         {tabValue === 5 && <FurnituresBuy customer={customer} />}
       </div>
     </Fade>

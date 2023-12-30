@@ -72,6 +72,7 @@ function mapValuesToEstimateRequest(estimate, customer, extraData) {
         estimate?.details?.departureInformations?.parkingPermit || false,
       footDistance: estimate?.details?.departureInformations?.footDistance || 0,
       address: {
+        city: estimate?.details?.departureInformations?.address?.city || "",
         placeName:
           estimate?.details?.departureInformations?.address?.placeName || "",
         lat:
@@ -92,6 +93,7 @@ function mapValuesToEstimateRequest(estimate, customer, extraData) {
         estimate?.details?.arrivalInformations?.parkingPermit || false,
       footDistance: estimate?.details?.arrivalInformations?.footDistance || 0,
       address: {
+        city: estimate?.details?.arrivalInformations?.address?.city || "",
         placeName:
           estimate?.details?.arrivalInformations?.address?.placeName || "",
         lat:

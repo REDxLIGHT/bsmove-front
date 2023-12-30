@@ -1,8 +1,12 @@
-
-import InConstructionComponent from '../../../../components/InConstruction';
+import messages from "./messages";
+import MovingComponent from "./components";
+import SectionContainer from "../Section";
 
 const ProfilMoving = () => (
-  <InConstructionComponent />
-)
+  <SectionContainer
+    sectionTitle={messages.sectionTitle.moving}
+    component={MovingComponent}
+  />
+);
 
 export default ProfilMoving;

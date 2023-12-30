@@ -19,8 +19,8 @@ const profilTabs = [
 ];
 
 const mySpaceTabs = [
-  // { title: messages.mySpace.categories.moving, value: 3 },
-  // { title: messages.mySpace.categories.vehiclesRent, value: 4 },
+  { title: messages.mySpace.categories.moving, value: 3 },
+  { title: messages.mySpace.categories.vehiclesRent, value: 4 },
   { title: messages.mySpace.categories.furnitures, value: 5 },
 ];
 
