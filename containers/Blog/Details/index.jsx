@@ -2,7 +2,8 @@ import Image from 'next/image';
 import styles from './index.module.css';
 
 
-const BlogPostDetail = ({title , description, post}) => {
+const BlogPostDetail = (post) => {
+  console.log(post.questions);
 
   return (
     <div>
@@ -11,7 +12,7 @@ const BlogPostDetail = ({title , description, post}) => {
         <p className={styles.description}>{post.description}</p>
         <Image className={styles.img} src={post.image} alt={post.title}/>
         {post.questions.map((questionObj, index) => (
-          <div key={post.id}>
+          <div key={post.slug}>
             <h1 className={styles.h3}>{`${index + 1}. ${questionObj.label}`}</h1>
             <p className={styles.p}>{questionObj.content}</p>
           </div>

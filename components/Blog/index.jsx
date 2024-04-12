@@ -3,8 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 
-const BlogPostCard = ({ id, image, title, description }) => {
-  
+
+const BlogPostCard = ({ id, image, title, description, slug }) => {
+
+  console.log(id);
+  console.log(slug);
+  console.log(title);
+  console.log(description);
   return (
     <div className={styles.blog_post_card}>
       <Image
@@ -24,7 +29,7 @@ const BlogPostCard = ({ id, image, title, description }) => {
 
       <div className={styles.container_2}>
         <Link
-          href={`/blog/${id}`}
+          href={`/blog/${slug}`}
           className={styles.link}
         >
           En savoir plus
@@ -33,10 +38,15 @@ const BlogPostCard = ({ id, image, title, description }) => {
     </div>
   )
 }
+
+
+
 BlogPostCard.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired
+
 }
 export default BlogPostCard

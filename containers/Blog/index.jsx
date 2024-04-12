@@ -12,7 +12,7 @@ const BlogPost = () => {
       <div className={styles.blog_container}>
         {blogPosts.map((post) => (
           <div
-            key={post.id}
+            key={post.slug}
             className={styles.blog}
           >
             <BlogPostCard
@@ -20,6 +20,7 @@ const BlogPost = () => {
               title={post.title}
               description={post.description}
               image={post.image}
+              slug={post.slug}
             />
           </div>
         ))}

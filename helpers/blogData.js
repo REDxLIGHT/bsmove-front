@@ -9,6 +9,7 @@ const blogPosts = [
     {
       id: 1,
       metatitle: "l’organisation d’un Déménagement",
+      slug: generateSlug("l’organisation d’un Déménagement"),
       keywords: "organisation déménagement, déménagement organisé, planification déménagement, transition déménagement, guide pratique déménagement",
       title: "Maîtriser l’Art de l’Organisation lors d’un Déménagement",
       description:
@@ -61,6 +62,7 @@ const blogPosts = [
     {
       id: 2,
       metatitle: "Déménagement avec Enfant",
+      slug: generateSlug("Déménagement avec Enfant"),
       keywords: "déménagement avec enfant, enfant en bas âge, guide pratique déménagement, planification déménagement, transition famille déménagement",
       title: "Un Guide Pratique pour un Déménagement Réussi avec un Enfant en Bas Âge",
       description:
@@ -113,6 +115,7 @@ const blogPosts = [
     {
       id: 3,
       metatitle: "Sécurité et Assurances en Déménagement",
+      slug: generateSlug("Sécurité et Assurances en Déménagement"),
       keywords: "sécurité déménagement, assurances déménagement, protection habitation, risques déménagement, couverture déménagement.",
       title: "Déménager en Toute Sécurité : L’Importance des Assurances Pendant le Déménagement",
       description:
@@ -149,6 +152,7 @@ const blogPosts = [
     {
       id: 4,
       metatitle: "Changement d'Adresse et Gestion du Courrier",
+      slug: generateSlug("Changement d'Adresse et Gestion du Courrier"),
       keywords: "Déménagement, Changement, Adresse, Gestion, Courrier, Postal, Notification, Réexpédition, Informations, Ligne, Voisins, Locataire, Système, Cartes, Notification, Changement, Adresse, Postal, Gestion, Courrier, Transition, Douceur",
       title: "Déménager avec Succès à travers le Changement d’Adresse Postal et la Gestion du Courrier",
       description:
@@ -185,6 +189,7 @@ const blogPosts = [
     {
       id: 5,
       metatitle: "Aides Financières pour un Déménagement",
+      slug: generateSlug("Aides Financières pour un Déménagement"),
       keywords: "Déménagement, Aides, Financières, France, APL, CAF, Prime, FSL, PAS, Prêt, Accession, Sociale, Logement, Solidarité, Commune, Mairie, Fonds, Solidarité, Logement, FSL, Difficultés, Ressources, Transition, Abordable, Financièrement, Planification, Recherche, Proactive, Options, Aides, Financières, France, Transition, Douceur, Nouveau, Chez-soi",
       title: "Déménager à travers les Aides Financières pour un Déménagement en France",
       description:
@@ -217,6 +222,7 @@ const blogPosts = [
     {
       id: 6,
       metatitle: "Déménager avec des Animaux",
+      slug: generateSlug("Déménager avec des Animaux"),
       keywords: "Déménagement, Animaux, Chien, Chat, Oiseau, Poisson, Lapin, Hamster, Tortue, Reptile, Transition, Bien-être, Stress, Préparation, Confort, Vétérinaire, Transport, Voyage, Installation, Routines, Exploration, Quartier,",
       title: "Déménager avec des Animaux : Guide Complet pour une Transition Douce",
       description:
@@ -259,5 +265,18 @@ const blogPosts = [
       conclution: "En suivant ces étapes attentivement, vous pouvez atténuer le stress de votre animal pendant le déménagement et faciliter une transition réussie vers votre nouveau domicile. N’oubliez pas de rester attentif à leurs besoins émotionnels tout au long du processus. Assurez-vous également de leur fournir un espace confortable et familier une fois arrivés à destination, afin de favoriser leur adaptation et leur bien-être dans"
     },
   ];
+
+
+function generateSlug(text) {
+    return text
+        .toLowerCase() // Convert to lowercase
+        .normalize("NFD") // Normalize diacritics
+        .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+        .replace(/[^\w\s-]/g, "") // Remove non-word characters except dashes and spaces
+        .replace(/\s+/g, "-") // Replace spaces with dashes
+        .replace(/--+/g, "-") // Replace consecutive dashes with single dash
+        .trim(); // Trim leading/trailing spaces or dashes
+}
+
 
 export default blogPosts;

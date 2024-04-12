@@ -11,9 +11,9 @@ import blogPosts from '../../helpers/blogData';
 
 const BlogPostDetailPage = ({cookies}) => {
   const router = useRouter(); // Initialize useRouter
-  const { blogId } = router.query; // Extract blogId from router query
+  const { slug } = router.query; // Extract blogId from router query
   const blogPosts = useContext(PostsContext);
-  const post = blogPosts.find(p => p.id === parseInt(blogId, 10));
+  const post = blogPosts.find(post => post.slug === slug);
 
   useEffect(() => {
     console.log('Rendered on the server side');
@@ -27,7 +27,7 @@ const BlogPostDetailPage = ({cookies}) => {
         description={post.description}
         keywords={post.keywords}
       >
-        <BlogPostDetail title={`BS Move Déménagement - ${post.title}`} description={post.description} post={post}/>
+        <BlogPostDetail title={`BS Move Déménagement - ${post.title}`} description={post.description} post={post} questions={post.questions} image={post.image} conclution={post.conclution}/>
         <Testemonial />
         <Footer />
       </Layout>
@@ -35,10 +35,10 @@ const BlogPostDetailPage = ({cookies}) => {
 }
 
 export async function getServerSideProps(context) {
-  const { blogId } = context.params; // Extract blogId from context
+  const { slug } = context.params; // Extract blogId from context
 
   // Find the post with the matching ID
-  const post = blogPosts.find(post => post.id === parseInt(blogId, 10));
+  const post = blogPosts.find(post => post.slug === slug);
 
   // Pass the fetched post data as props
   return {
