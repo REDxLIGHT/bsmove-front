@@ -46,7 +46,6 @@ const STEPS = [
   Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_INVENTORY_PAGE,
-  Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_SUMMARY_PAGE,
 ];
 
@@ -55,11 +54,6 @@ const DEFAULT_LNG = 0;
 
 function mapValuesToEstimateRequest(estimate, extraData, formData) {
   return {
-    prename: formData?.prename,
-    name: formData?.name,
-    email: formData?.email,
-    phone: formData?.phone,
-    address: formData?.address,
     prename: formData?.prename,
     name: formData?.name,
     email: formData?.email,
@@ -249,11 +243,6 @@ const EstimateContainer = ({ step = 0, setStep }) => {
   }
 
   const [formData, setFormData] = useState({});
-  // Function to handle form data submission from EstimateUserFormComponent
-  function handleFormSubmit(data) {
-    setFormData(data); // Update the state with form data
-    console.log("Form data:", formData);
-  }
 
 
   function handleContinue(value, errorMessage = "") {
@@ -272,10 +261,7 @@ const EstimateContainer = ({ step = 0, setStep }) => {
       distance,
       priceCalculator,
     }, formData);
-    
-    console.log("Request Data:", requestData);
 
-    console.log("Request Data:", requestData);
     const res = await api.post("/Estimates/no-auth", requestData);
     if (res?.ok) {
       await router.replace(Routes.ESTIMATE_VALIDATION_PAGE);
@@ -305,24 +291,14 @@ const EstimateContainer = ({ step = 0, setStep }) => {
       //   return router.push(Routes.LOGIN_PAGE);
       // }
       return setStep(3);
-      // if (!auth?.id) {
-      //   addToGlobalStateByKey("redirect", STEPS[step + 1]);
-      //   return router.push(Routes.LOGIN_PAGE);
-      // }
-      return setStep(3);
     }
     if (step === 3) {
-      // resetRedirect();
       // resetRedirect();
       return router.push(Routes.HOME_PAGE);
     }
     await router.push(STEPS[step + 1]);
   }
 
-  async function handlePreviousStep() {
-    if (step === 0) return router.push(Routes.HOME_PAGE);
-    await router.push(STEPS[step - 1]);
-  }
 
   async function handlePreviousStep() {
     if (step === 0) return router.push(Routes.HOME_PAGE);
