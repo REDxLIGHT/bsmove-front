@@ -9,7 +9,7 @@ import { shape, string } from "prop-types";
 import Link from "next/link";
 
 const PrestationCategoryPreview = ({
-  category: { src, title = "", href } = {},
+  category: { src, title = "", href, button, desc } = {},
 }) => {
   const [raised, setRaised] = useState(false);
   const router = useRouter();
@@ -28,8 +28,9 @@ const PrestationCategoryPreview = ({
 
   return (
     <div className={styles.prestation_section_category_container}>
-      <Link href={href}>
+      <div className={styles.prestation}>
         <Card
+          className={styles.prestation_section_category}
           onMouseOver={toggleRaised}
           onMouseOut={toggleRaised}
           raised={raised}
@@ -40,12 +41,30 @@ const PrestationCategoryPreview = ({
           >
             <CategoryPreview href={href} title={title} src={src} />
           </div>
-          <div className={styles.prestation_section_category_content}>
-            <div>{title}</div>
-            <ArrowForwardIcon />
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "self-start",
+            padding: "0 1rem",
+          
+          }}>
+            <h4 style={{
+              fontSize: "1.5rem",
+              fontWeight: "bold",
+              marginTop: "1rem",
+            }}>{title}</h4>
+            <p style={{
+              fontSize: "1rem",
+              marginTop: "1rem",
+            }}>{desc}</p>
           </div>
+          <Link href={href} className={styles.prestation_section_category_content}>
+            <div>{button}</div>
+            <ArrowForwardIcon />
+          </Link>
         </Card>
-      </Link>
+      </div>
     </div>
   );
 };

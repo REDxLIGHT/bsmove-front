@@ -6,6 +6,7 @@ import styles from "../index.module.css";
 import messages from "../messages";
 import Routes from "../../../helpers/routes";
 import { any } from "prop-types";
+import { colors } from "@mui/material";
 
 const HomeEstimateSection = ({ technicalIssueAlert }) => {
   const {
@@ -31,6 +32,12 @@ const HomeEstimateSection = ({ technicalIssueAlert }) => {
           >
             {messages.estimateSection.actions.leftButton}
           </Button>
+          <button
+            onClick={() => router.push(Routes.CONTACT_PAGE)}
+            className={styles.estimate_section_actions_right_button}
+          >
+            {messages.estimateSection.actions.rightButton}
+          </button>
         </div>
       </div>
       <div className={styles.home_estimate_section_right}>
@@ -38,9 +45,19 @@ const HomeEstimateSection = ({ technicalIssueAlert }) => {
           <Image
             className={styles.home_estimage_section_right_img_illustration}
             layout="fill"
-            src="/images/homescreen_1.png"
+            src="/images/image1.jpeg"
             alt="homepage_section_estimate"
           />
+          <div className={styles.stats_container}>
+            <div className={styles.stats}>
+              <h3>+15 ans</h3>
+              <p>années d’expériences</p>
+            </div>
+            <div className={styles.stats}>
+              <h3>+3,000</h3>
+              <p>client satisfaits</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

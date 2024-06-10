@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import styles from "./index.module.css";
 import messages from "./messages";
-
+import EstimateUserFormComponent from './Summary/components/EstimateUserFormComponent'
 import Subtitle from "../../components/Texts/Subtitle";
 import Button from "../../components/Button";
 import Routes from "../../helpers/routes";
@@ -17,6 +17,7 @@ import { useLoading } from "../../hooks/loading";
 import { useAlert } from "../../hooks/alert";
 import PriceCalculator from "../../components/PriceCalculator";
 import { useGlobal } from "../../hooks/global";
+import { BorderLeft, Email } from "@mui/icons-material";
 
 const HelpBox = () => {
   const router = useRouter();
@@ -44,14 +45,20 @@ const STEPS = [
   Routes.ESTIMATE_DETAILS_PAGE,
   Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_INVENTORY_PAGE,
+  Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_SUMMARY_PAGE,
 ];
 
 const DEFAULT_LAT = 0;
 const DEFAULT_LNG = 0;
 
-function mapValuesToEstimateRequest(estimate, customer, extraData) {
+function mapValuesToEstimateRequest(estimate, extraData, formData) {
   return {
+    prename: formData?.prename,
+    name: formData?.name,
+    email: formData?.email,
+    phone: formData?.phone,
+    address: formData?.address,
     startGeo: {
       lat:
         estimate?.details?.departureInformations?.address?.lat || DEFAULT_LAT,
@@ -205,8 +212,6 @@ function mapValuesToEstimateRequest(estimate, customer, extraData) {
       },
     },
     status: "WAITING_ACTION",
-    customerInformations: customer,
-    customerId: customer?.id,
     totalPrice: extraData.priceCalculator?.totalPrice,
   };
 }
@@ -226,10 +231,17 @@ const EstimateContainer = ({ step = 0, setStep }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
   const { estimate, clearEstimate, priceCalculator } = useEstimate();
-  const { auth, customer } = useCustomer();
+  // const { auth, customer } = useCustomer();
   const { resetRedirect, addToGlobalStateByKey } = useGlobal();
   const { setGlobalLoading } = useLoading();
   const { setAlert } = useAlert();
+  // Function to handle form data submission from EstimateUserFormComponent
+  function handleFormSubmit(data) {
+    setFormData(data); // Update the state with form data
+    console.log("Form data:", formData);
+  }
+
+  const [formData, setFormData] = useState({});
 
   function handleContinue(value, errorMessage = "") {
     setCanContinue(value);
@@ -242,16 +254,18 @@ const EstimateContainer = ({ step = 0, setStep }) => {
       estimate?.details?.departureInformations?.address,
       estimate?.details?.arrivalInformations?.address
     );
-    const requestData = mapValuesToEstimateRequest(estimate, customer, {
+    const requestData = mapValuesToEstimateRequest(estimate, {
       distance,
       priceCalculator,
-    });
-    const res = await api.post("/Estimates", requestData, {
-      headers: { Authorization: auth.id },
-    });
+    }, formData);
+    
+    console.log("Request Data:", requestData);
+    const res = await api.post("/Estimates/no-auth", requestData);
     if (res?.ok) {
       await router.replace(Routes.ESTIMATE_VALIDATION_PAGE);
       clearEstimate();
+      console.log("API Response:", res);
+
     } else
       setAlert({
         severity: "error",
@@ -268,16 +282,22 @@ const EstimateContainer = ({ step = 0, setStep }) => {
     if (!canContinue) return;
     if (step === 1) return setStep(2);
     if (step === 2) {
-      if (!auth?.id) {
-        addToGlobalStateByKey("redirect", STEPS[step + 1]);
-        return router.push(Routes.LOGIN_PAGE);
-      }
+      // if (!auth?.id) {
+      //   addToGlobalStateByKey("redirect", STEPS[step + 1]);
+      //   return router.push(Routes.LOGIN_PAGE);
+      // }
+      return setStep(3);
     }
     if (step === 3) {
-      resetRedirect();
+      // resetRedirect();
       return router.push(Routes.HOME_PAGE);
     }
     await router.push(STEPS[step + 1]);
+  }
+
+  async function handlePreviousStep() {
+    if (step === 0) return router.push(Routes.HOME_PAGE);
+    await router.push(STEPS[step - 1]);
   }
 
   return (
@@ -301,10 +321,18 @@ const EstimateContainer = ({ step = 0, setStep }) => {
               handleContinue={handleContinue}
             />
           ) : null}
-          {step === 1 || step === 2 ? (
+          {step === 1 ? (
             <EstimateInventoryComponent
               step={step}
               handleContinue={handleContinue}
+            />
+          ) : null}
+          {step === 2 ? (
+            <EstimateUserFormComponent
+              handleContinue={handleContinue}
+              step={step}
+              initialFormData={formData}
+              onSubmit={handleFormSubmit} // Pass the handleFormSubmit function
             />
           ) : null}
           {step === 3 ? (
@@ -324,15 +352,29 @@ const EstimateContainer = ({ step = 0, setStep }) => {
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
+                  flexDirection: "row",
                   width: "100%",
                   alignItems: "flex-end",
                 }}
               >
-                <div className={styles.estimate_page_action_component}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'row-reverse',
+                  width: '100%',
+                  gap: '10px'
+                }}>
                   <Button onClick={handleNextStep}>
                     {messages.actions.nextStep}
                   </Button>
+                  {step > 0 && step != 2 && (
+                    <Button onClick={handlePreviousStep} style={{
+                      backgroundColor: 'white',
+                      color: '#38c798',
+                      border: '0.5px solid #38c798',
+                    }}>
+                      {messages.actions.previousStep}
+                    </Button>
+                  )}
                 </div>
                 {errorMessage && (
                   <span style={{ color: "red" }}>{errorMessage}</span>

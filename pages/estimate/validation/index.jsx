@@ -25,7 +25,7 @@ const EstimateSummaryPage = ({ cookies }) => (
 export const getServerSideProps = async (context) => {
   const cookies = await parseCookies(context?.req);
   const parsedCookies = cookies || {};
-  return handlePageRedirect(parsedCookies, "private");
+  return handlePageRedirect(parsedCookies, "common");
 };
 
 export default EstimateSummaryPage;

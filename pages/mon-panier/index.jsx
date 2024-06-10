@@ -9,7 +9,7 @@ import { handlePageRedirect, parseCookies } from "../../helpers/functions";
 import { NAV_HEADER_FURNITURES_BUY_STEPS } from "../../helpers/constants";
 
 const BasketPage = ({ cookies }) => (
-  <Layout cookies={cookies} title="BS Move - Mon panier" description="Consultez les articles que vous avez ajoutés à votre panier et procédez au paiement en toute sécurité." keywords="panier, achats, déménagement, produits, commande" pageId="basket" withoutHeader>
+  <Layout cookies={cookies} title="BS Move Déménagement - Mon panier" description="Consultez les articles que vous avez ajoutés à votre panier et procédez au paiement en toute sécurité." keywords="panier, achats, déménagement, produits, commande" pageId="basket" withoutHeader>
     <NavHeader
       secondary
       initialStep={0}

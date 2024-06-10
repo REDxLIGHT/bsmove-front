@@ -1,13 +1,13 @@
 export default {
   blog: 'Blog',
   contact: 'Contact',
-  location_camion: 'location camion',
-  location_meuble: 'location monte-meuble',
-  achat: 'achat matériel',
+  location_camion: 'Location camion',
+  location_meuble: 'Location monte-meuble',
+  achat: 'Achats matériels',
   services: 'Services',
   advises: 'Conseils déménagement',
   news: 'Actus',
-  estimate: 'Demande de devis',
+  estimate: 'Devis gratuit',
   goBack: 'Retourner à la boutique',
   secondary: {}
 };

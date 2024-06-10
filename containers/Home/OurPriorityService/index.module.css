@@ -1,0 +1,129 @@
+/* Define a container class for responsive design */
+.container {
+  /* Add some padding for inner spacing */
+  padding: 1rem;
+
+  /* Set max-width to ensure it doesn't stretch too wide on large screens */
+  max-width: 1300px;
+
+  /* Center the container horizontally */
+  margin: 0 auto;
+
+  /* Ensure it adapts to smaller screens */
+  width: 100%;
+
+  /* Responsive media queries */
+  @media (max-width: 1200px) {
+    max-width: 1100px;
+  }
+  
+  @media (max-width: 1000px) {
+    max-width: 900px;
+  }
+
+  @media (max-width: 800px) {
+    max-width: 700px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+    /* max-width: 550px; */
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: sp; */
+  align-items: center;
+  gap: 4rem;
+  margin: 100px 0;
+}
+@media (max-width: 1000px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+.flex1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  width: 50%;
+  height: 600px;
+}
+.flex1 h3 {
+  font-family: Satoshi;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 57.6px;
+}
+@media (max-width: 1000px) {
+  .flex1 h3 {
+    font-size: 30px;
+  }
+}
+.flex1 p {
+  font-family: Satoshi;
+  color: grey;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+.flex2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 1rem; */
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 600px;
+  width: 600px;
+  /* min-width: 500px; */
+  /* height: 300px; */
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  /* background-color: #ECFDF5; */
+}
+@media (max-width: 1000px) {
+  .card {
+    width: 400px;
+    margin: 10px 50px;
+    padding: 5px;
+  }
+}
+.card:first-child {
+  background-color: #ECFDF5;
+}
+.card:nth-child(2) {
+  background-color: #FFFBEB;
+}
+.card:last-child {
+  background-color: #E8EDFB;
+}
+.card h5 {
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; 
+}
+
+.card p {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 24px */
+}

@@ -12,7 +12,7 @@ const EstimateInventoryPage = ({ cookies }) => {
   return (
     <Layout
       cookies={cookies}
-      title="Devis - Inventaire"
+      title="BSMove Déménagement - Devis Inventaire"
       description="Établissez un inventaire détaillé de vos biens pour obtenir une estimation précise du coût de votre déménagement."
       keywords="inventaire de l'estimation, inventaire, estimation, déménagement, services"
       pageId="estimate-inventory"

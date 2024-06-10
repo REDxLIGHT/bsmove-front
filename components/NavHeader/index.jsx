@@ -200,16 +200,6 @@ const PrimaryNavHeader = ({ initialTab }) => {
               <span className={styles.menu_label_span}>{messages.achat}</span>
             </Link>
           }
-          sx={{
-            color: "#000000",
-            fontWeight: 600,
-            fontFamily: "proxima-nova",
-            fontSize: "80%",
-            minWidth: "8rem",
-            "& Mui-Selected:": {
-              color: "rgb(56, 199, 152)",
-            },
-          }}
         />
         <Tab
           label={
@@ -217,16 +207,6 @@ const PrimaryNavHeader = ({ initialTab }) => {
               <span className={styles.menu_label_span}>{messages.location_meuble}</span>
             </Link>
           }
-          sx={{
-            color: "#000000",
-            fontWeight: 600,
-            fontFamily: "proxima-nova",
-            fontSize: "80%",
-            minWidth: "8rem",
-            "& Mui-Selected:": {
-              color: "rgb(56, 199, 152)",
-            },
-          }}
         />
         <Tab
           label={
@@ -234,37 +214,6 @@ const PrimaryNavHeader = ({ initialTab }) => {
               <span className={styles.menu_label_span}>{messages.location_camion}</span>
             </Link>
           }
-          sx={{
-            color: "#000000",
-            fontWeight: 600,
-            fontFamily: "proxima-nova",
-            fontSize: "80%",
-            minWidth: "8rem",
-            "& Mui-Selected:": {
-              color: "rgb(56, 199, 152)",
-            },
-          }}
-        />
-
-
-
-
-        <Tab
-          label={
-            <Link href={Routes.CONTACT_PAGE}>
-              <span className={styles.menu_label_span}>{messages.contact}</span>
-            </Link>
-          }
-          sx={{
-            color: "#000000",
-            fontWeight: 600,
-            fontFamily: "proxima-nova",
-            fontSize: "80%",
-            minWidth: "8rem",
-            "& Mui-Selected:": {
-              color: "rgb(56, 199, 152)",
-            },
-          }}
         />
         {/* Blog Button */}
         <Tab
@@ -273,16 +222,13 @@ const PrimaryNavHeader = ({ initialTab }) => {
               <span className={styles.menu_label_span}>{messages.blog}</span>
             </Link>
           }
-          sx={{
-            color: "#000000",
-            fontWeight: 600,
-            fontFamily: "proxima-nova",
-            fontSize: "80%",
-            minWidth: "8rem",
-            "& Mui-Selected:": {
-              color: "rgb(56, 199, 152)",
-            },
-          }}
+        />
+        <Tab
+          label={
+            <Link href={Routes.CONTACT_PAGE}>
+              <span className={styles.button_contact}>{messages.contact}</span>
+            </Link>
+          }
         />
       </S.Tabs>
       <Link

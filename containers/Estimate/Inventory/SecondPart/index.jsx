@@ -329,7 +329,7 @@ const EstimateInventorySecondPart = ({ handleContinue }) => {
   } = useEstimate();
   return (
     <Fade timeout={500} in={true}>
-      <div className={styles.estimate_page_inventory_container}>
+      <div className={styles.estimate_page_inventory_button}>
         <MountingHelpSection
           inventory={inventory}
           addToEstimateInventoryByKey={addToEstimateInventoryByKey}

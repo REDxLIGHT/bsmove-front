@@ -32,11 +32,12 @@ import { useAlert } from "../../hooks/alert";
 const S = {};
 
 S.LeftHeader = styled.p`
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
   padding: 0 1rem;
+  text-decoration-line: underline;
+  line-height: 24px;
 `;
 
 S.RightHeader = styled.div`
@@ -46,9 +47,10 @@ S.RightHeader = styled.div`
   align-items: center;
   justify-content: space-evenly;
   font-size: 1rem;
-  font-family: "proxima-nova", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-weight: 600;
   width: 6.5rem;
+  height: 48px;
 `;
 
 S.IconButton = styled(IconButton)`
@@ -71,7 +73,6 @@ const DesktopHeader = ({ basket, handleCartButton, handleProfilButton }) => {
           {process.env.NEXT_PUBLIC_CONTACT_PHONE_NUMBER}
         </a>
       </S.LeftHeader>
-      <S.Divider orientation="vertical" />
       <S.RightHeader>
         <IconButton
           className={styles.header_icon}

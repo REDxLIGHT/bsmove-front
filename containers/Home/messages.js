@@ -1,14 +1,14 @@
 export default {
   estimateSection: {
-    title: "BS MOVE VOTRE PARTENAIRE DEMENAGEMENT",
+    title: "BS Move, votre partenaire déménagement fiable",
     content: {
-      main: "Offrez-vous un déménagement à la hauteur de vos attentes",
+      main: "Déménagez en toute sérénité",
       secondary:
-        "Chez Bsmove déménagement, nous adaptons nos services à vos besoins. Que vous recherchiez un déménagement complet, de l’emballage à l’installation, ou simplement un coup de main sur certaines étapes, nous sommes là pour répondre à vos exigences. Optez pour la flexibilité et la personnalisation avec Bsmove Déménagement, votre partenaire de confiance pour une transition sans stress.",
+        "Que ce soit pour un déménagement complet ou juste un coup de main, Bsmove s'adapte à vos besoins pour une transition fluide et sans stress.",
     },
     actions: {
-      leftButton: "Obtenir un devis",
-      rightButton: "En savoir plus",
+      leftButton: "Obtenez votre devis gratuit",
+      rightButton: "Contactez-nous",
     },
   },
   feedbackSection: {
@@ -19,16 +19,21 @@ export default {
   prestationsSection: {
     title: "ce que nous faisons",
     subtitles: {
-      leftPart: "Prestations proposées par",
+      leftPart: "Nos services sur-mesure",
       title: "BS Move",
     },
     content:
       "Bsmove vous offre des options flexibles pour votre déménagement. Choisissez parmi le déménagement complet , la location de monte-meuble, de camion avec chauffeur, ou l’achat de matériel. Personnalisez votre prestation selon vos besoins. Avec Bsmove, Le déménagement sur mesure devient simple.",
     categories: {
-      moving: "Déménagement",
+      moving: "Déménagement complet",
+      movingDesc: "Obtenez votre devis gratuit dès maintenant.",
+      movingButton: "je déménage",
       vehicleRent: "Location véhicules",
+      vehicleRentDesc: "Monte meuble, camion de déménagement",
+      vehicleRentButton: "Louer un camion",
       furnituresBuy: "Achat matériels",
-      furnituresGuard: "Garde meubles",
+      furnituresBuyDesc: "Cartons, protections, accessoires etc...",
+      furnituresBuyButton: "Voir les produits",
     },
   },
   guidelineSection: {
@@ -75,7 +80,8 @@ export default {
   },
   competencesSection: {
     title: "OFFREZ-VOUS L'EXPERTISE DE BS MOVE",
-    subtitle: "BS Move déménagement, une équipe professionnelle.",
+    subtitle1: "BS Move déménagement,",
+    subtitle2: " une équipe professionnelle.",
     contents: {
       firstPart:
         "Chez Bsmove Déménagement, notre équipe incarne l’excellence. Composée de professionnels chevronnés, notre équipe est déterminée à offrir un service de déménagement de première classe. De l’emballage méticuleux de vos biens à une logistique sans faille, chaque membre de notre équipe s’engage à assurer la sécurité de vos possessions et la fluidité de votre transition. Fiers de notre expertise, nous sommes prêts à relever tous les défis pour faire de votre déménagement une expérience sans stress. Avec Bsmove Déménagement, confiez vos précieux souvenirs à une équipe qui comprend l’importance de chaque détail.",
@@ -85,7 +91,7 @@ export default {
   },
   presentationSection: {
     title: "Nous sommes",
-    subtitle: "En Ile de France",
+    subtitle: "Basé en Ile-de-France",
     content:
       "Basés au cœur de l’Île-de-France, chez Bsmove Déménagement, nous sommes fiers de servir notre communauté locale tout en étendant notre expertise à travers toute la France et au-delà des frontières. Que votre destination soit Paris, une autre ville en France ou même un lieu à travers l’Europe, notre équipe expérimentée est prête à vous accompagner. Notre présence stratégique en Île-de-France nous permet d’offrir des services de déménagement personnalisés et fiables, où que vous soyez. Optez pour Bsmove Déménagement, votre partenaire de confiance pour des transitions en douceur, de la région parisienne aux horizons européens.",
   },
@@ -115,7 +121,7 @@ export default {
     },
   },
   gettingStartedSection: {
-    subtitle: "Prêt à déménager ?",
+    subtitle: "Déménageons ensemble",
     content:
       "Le jour J approche, et nous sommes là pour vous simplifier la vie. De l’emballage méticuleux à une logistique bien huilée, notre équipe expérimentée prend en charge chaque étape. Que vous changiez de quartier ou franchissiez les frontières européennes, nous sommes prêts à rendre votre déménagement sans stress. Donnez le coup d’envoi à cette nouvelle aventure avec la confiance que seul Bsmove peut offrir. Prêt à déménager ? Nous sommes à vos côtés.",
     action: "Déménageons ensemble",

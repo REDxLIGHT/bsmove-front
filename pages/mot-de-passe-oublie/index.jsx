@@ -42,7 +42,7 @@ const ForgotPasswordPage = ({ cookies }) => {
   }
 
   return (
-    <Layout cookies={cookies} withoutHeader title='Mot de passe oublié' description='Réinitialisez votre mot de passe si vous avez oublié vos identifiants de connexion.' keywords=' mot de passe oublié, réinitialisation, sécurité, connexion' pageId='forgot-password' display="flex">
+    <Layout cookies={cookies} withoutHeader title='BSMove - Mot de passe oublié' description='Réinitialisez votre mot de passe si vous avez oublié vos identifiants de connexion.' keywords=' mot de passe oublié, réinitialisation, sécurité, connexion' pageId='forgot-password' display="flex">
       <SigninContainer page='forgot-password'>
         <Component
           handleSubmit={handleSubmit}

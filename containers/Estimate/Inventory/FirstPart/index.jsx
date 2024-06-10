@@ -322,7 +322,7 @@ const HeavyItemsChecklist = ({ inventory, addToEstimateInventoryByKey }) => {
           disabled={!inventory?.heavyObjects?.items?.poolTable?.present}
         />
       </div>
-      <div className={styles.inventory_heavy_objects_section}>
+      {/* <div className={styles.inventory_heavy_objects_section}>
         <FormControlLabel
           control={
             <CheckBox
@@ -348,7 +348,7 @@ const HeavyItemsChecklist = ({ inventory, addToEstimateInventoryByKey }) => {
           variant="standard"
           disabled={!inventory?.heavyObjects?.items?.other?.present}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

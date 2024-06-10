@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
             <Html lang="fr">
                 <Head>
                     {this.props.emotionStyleTags}
+                    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />          
                 </Head>
                 <body>
                 <Main />

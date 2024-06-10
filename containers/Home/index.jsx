@@ -3,10 +3,9 @@ import styled from "styled-components";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import IconButton from "@mui/material/IconButton";
 import Card from "@mui/material/Card";
-
+import data from "./HomeFeedbacksSection/data.json";
 import Routes from "../../helpers/routes";
 import Button from "../../components/Button";
-
 import styles from "./index.module.css";
 import messages from "./messages";
 import { useAlert } from "../../hooks/alert";
@@ -15,78 +14,41 @@ import HomeEstimateSection from "./HomeEstimateSection/HomeEstimateSection";
 import HomeFeedbacksSection from "./HomeFeedbacksSection/HomeFeedbacksSection";
 import CategoryPreview from "./CategoryPreview/CategoryPreview";
 import HomePrestationsSection from "./HomePrestationsSection/HomePrestationsSection";
+import OurPriorityService from "./OurPriorityService/OurPriorityService";
 import { useState } from "react";
 
 const HomeGuidelineSection = () => (
+  <div className={styles.container_guideline}>
   <div className={styles.guideline_section}>
-    <div className={styles.guideline_section_container}>
-      <div className={styles.section_title}>
-        {messages.guidelineSection.title}
-      </div>
-      <div className={styles.section_subtitle}>
-        {messages.guidelineSection.subtitle}
-      </div>
-      <div className={styles.guideline_section_steps_container}>
-        <div className={styles.guideline_section_step_illustration_container}>
-          <div className={styles.guideline_section_step_illustration_component}>
-            <Image
-              className={styles.furniture_card_img_illustration}
-              layout="fill"
-              src="/images/icon_steps_homepage.png"
-              alt={`img-step-1`}
-            />
-          </div>
-        </div>
-        <div className={styles.guideline_section_step_infos}>
-          <h3 className={styles.guideline_section_step_title}>
-            {messages.guidelineSection.steps.first.title}
-          </h3>
-          <div className={styles.guideline_section_step_content}>
-            {messages.guidelineSection.steps.first.content}
-          </div>
+    <div className={styles.left_guideline}>
+      <h3>Obtenez votre devis immédiatement et gratuitement</h3>
+      <p>Recevez instantanément votre devis gratuit en quelques clics ! Profitez d'une estimation rapide et sans engagement.</p>
+      <button>Estimez votre déménagement</button>
+    </div>
+    <div className={styles.right_guideline}>
+      <div className={styles.right_guideline_card}>
+        <span>1</span>
+        <div>
+          <h5>Je fais ma demande de devis en ligne</h5>
+          <p>Services parfaitement adaptés à vos besoins et horaires.</p>
         </div>
       </div>
-      <div className={styles.guideline_section_steps_container}>
-        <div className={styles.guideline_section_step_illustration_container}>
-          <div className={styles.guideline_section_step_illustration_component}>
-            <Image
-              className={styles.furniture_card_img_illustration}
-              layout="fill"
-              src="/images/icon_steps_homepage.png"
-              alt={`img-step-1`}
-            />
-          </div>
-        </div>
-        <div className={styles.guideline_section_step_infos}>
-          <h3 className={styles.guideline_section_step_title}>
-            {messages.guidelineSection.steps.second.title}
-          </h3>
-          <div className={styles.guideline_section_step_content}>
-            {messages.guidelineSection.steps.second.content}
-          </div>
+      <div className={styles.right_guideline_card}>
+        <span>2</span>
+        <div>
+          <h5>J’obtiens une estimation</h5>
+          <p>Devis immédiat et complet, sans surprises cachées.</p>
         </div>
       </div>
-      <div className={styles.guideline_section_steps_container}>
-        <div className={styles.guideline_section_step_illustration_container}>
-          <div className={styles.guideline_section_step_illustration_component}>
-            <Image
-              className={styles.furniture_card_img_illustration}
-              layout="fill"
-              src="/images/icon_steps_homepage.png"
-              alt={`img-step-1`}
-            />
-          </div>
-        </div>
-        <div className={styles.guideline_section_step_infos}>
-          <h3 className={styles.guideline_section_step_title}>
-            {messages.guidelineSection.steps.third.title}
-          </h3>
-          <div className={styles.guideline_section_step_content}>
-            {messages.guidelineSection.steps.third.content}
-          </div>
+      <div className={styles.right_guideline_card}>
+        <span>3</span>
+        <div>
+          <h5>J’organise mon déménagement</h5>
+          <p>Large choix de véhicules et matériel pour déménager.</p>
         </div>
       </div>
     </div>
+  </div>
   </div>
 );
 
@@ -122,79 +84,63 @@ const AdvantageCard = ({ title, content }) => {
 
 const HomeAdvantagesSection = () => (
   <div className={styles.advantages_section}>
-    <div className={styles.section_title}>
-      {messages.advantagesSection.title}
-    </div>
-    <div className={styles.section_subtitle}>
-      {messages.advantagesSection.subtitle}
-    </div>
-    <div className={styles.advantages_section_cards}>
-      <AdvantageCard
-        title={messages.advantagesSection.advantages.first.title}
-        content={messages.advantagesSection.advantages.first.content}
-      />
-      <AdvantageCard
-        title={messages.advantagesSection.advantages.second.title}
-        content={messages.advantagesSection.advantages.second.content}
-      />
-      <AdvantageCard
-        title={messages.advantagesSection.advantages.third.title}
-        content={messages.advantagesSection.advantages.third.content}
-      />
+      <Image width={600} height={640} src="/images/moving_together_illu.png" alt="competences" className={styles.AdvantageImage}/>
+    <div className={styles.AdvantageFlex}>
+      <h3>Pourquoi choisir BS Move</h3>
+      <p>Gagnez du temps précieux grâce à notre équipe expérimentée qui prend en charge l'emballage, la logistique et les formalités administratives. Du premier contact à l'installation, nos experts vous accompagnent pour une transition sans stress. Avec Bs Move Déménagement, bénéficiez d'un service professionnel de qualité, où chaque détail compte pour assurer votre satisfaction totale.</p>
+      <div className={styles.AdvantageFlex2}>
+        <h5>Gain de temps</h5>
+        <h5>Accompagnement expert</h5>
+        <h5>Service professionnel</h5>
+      </div>
     </div>
   </div>
 );
 
 const HomeCompetencesSection = () => (
   <div className={styles.competences_section}>
-    <div className={styles.competences_section_illustration_container}>
-      <div className={styles.competences_section_illustration}>
-        <Image
-          className={styles.prestation_section_category_thumbnail}
-          layout="fill"
-          src="/images/moving_together_illu.png"
-          alt="competences"
-        />
-      </div>
-    </div>
     <div className={styles.competences_section_infos}>
-      <div className={styles.section_title}>
-        {messages.competencesSection.title}
-      </div>
       <div className={styles.section_subtitle}>
-        {messages.competencesSection.subtitle}
+        {messages.competencesSection.subtitle1}
+        <div className={styles.subtitle2}>{messages.competencesSection.subtitle2}</div>
       </div>
+      
       <div className={styles.competences_section_infos_content}>
         <div>{messages.competencesSection.contents.firstPart}</div>
-        <div>{messages.competencesSection.contents.secondPart}</div>
       </div>
     </div>
   </div>
 );
 
-const HomePresentationSection = () => (
+const HomePresentationSection = () => {
+  const router = useRouter();
+  return (
+  <div style={{
+    position: 'relative',
+    height: '500px',
+  }}>
   <div className={styles.presentation_section}>
+    
     <div className={styles.presentation_section_infos}>
-      <div className={styles.section_title}>
-        {messages.presentationSection.title}
-      </div>
       <div className={styles.section_subtitle}>
         {messages.presentationSection.subtitle}
       </div>
       <div className={styles.presentation_section_content}>
         {messages.presentationSection.content}
       </div>
+      <button className={styles.presentationSectionButton} onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}>Estimez votre déménagement</button>
     </div>
     <div className={styles.presentation_section_illustration_container}>
       <Image
         className={styles.presentation_section_illustration}
         layout="fill"
-        src="/images/paris_map.png"
+        src="/images/france1.png"
         alt="where_img_homescreen"
       />
     </div>
   </div>
-);
+  </div>
+)};
 
 // MOCK
 
@@ -286,38 +232,31 @@ const HomeGettingStartedSection = ({ technicalIssueAlert }) => {
   const router = useRouter();
   return (
     <div className={styles.getting_started_section}>
+      
       <div className={styles.getting_started_container}>
-        <div className={styles.getting_started_left_container}>
+        <img width={73} height={73}  src={'/images/left_box.png'} className={styles.left_box}></img>
+      <img width={73} height={73}  src={'/images/right_box.png'} className={styles.right_box}></img>
           <div className={styles.getting_started_infos}>
-            <div className={styles.section_subtitle}>
+            <h3 >
               {messages.gettingStartedSection.subtitle}
-            </div>
-            <div className={styles.section_content}>
+            </h3>
+            <p>
               {messages.gettingStartedSection.content}
+            </p>
+            <div className={styles.buttons}>
+            <button
+              onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}
+            >
+              Estimez votre déménagement
+            </button>
+            <button
+              onClick={() => router.push(Routes.CONTACT_PAGE)}
+            >
+              Contactez-nous
+            </button>
             </div>
           </div>
-          <div className={styles.getting_started_action_container}>
-            <Button
-              onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}
-              outlined
-            >
-              {messages.gettingStartedSection.action}
-            </Button>
-          </div>
         </div>
-        <div className={styles.getting_started_section_right_container}>
-          <div
-            className={styles.getting_started_section_illustration_container}
-          >
-            <Image
-              className={styles.getting_started_illustration}
-              layout="fill"
-              src="/images/ready_to_move_truck_illustration.png"
-              alt="getting_started_truck"
-            />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
@@ -331,11 +270,13 @@ const HomePageContainer = () => {
   return (
     <div className={styles.container}>
       <HomeEstimateSection technicalIssueAlert={technicalIssueAlert} />
-      <HomeFeedbacksSection technicalIssueAlert={technicalIssueAlert} />
+      <OurPriorityService />
       <HomePrestationsSection technicalIssueAlert={technicalIssueAlert} />
+      <HomeFeedbacksSection testimonialData={data} technicalIssueAlert={technicalIssueAlert} />
       <HomeGuidelineSection technicalIssueAlert={technicalIssueAlert} />
       <HomeAdvantagesSection technicalIssueAlert={technicalIssueAlert} />
       <HomeCompetencesSection technicalIssueAlert={technicalIssueAlert} />
+      <div className={styles.presentation_section_illustration_container_bg}></div>
       <HomePresentationSection technicalIssueAlert={technicalIssueAlert} />
       {/* <HomeBlogSection technicalIssueAlert={technicalIssueAlert} /> */}
       <HomeGettingStartedSection technicalIssueAlert={technicalIssueAlert} />

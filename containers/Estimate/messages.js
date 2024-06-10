@@ -5,6 +5,7 @@ export default {
     "Remplissez notre formulaire simple et rapide pour obtenir une estimation précise. Déménagez en toute tranquillité en connaissant le coût de nos services sur mesure.",
   actions: {
     nextStep: "Etape suivante",
+    previousStep: "Etape précédente",
     modifyOrder: "Modifier ma commande",
     finalizeEstimate: "Envoyer la demande de devis",
   },

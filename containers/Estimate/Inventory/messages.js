@@ -29,7 +29,7 @@ export default {
         },
         fridge: {
           name: "fridge",
-          label: "Frigo",
+          label: "Frigo américain",
           description:
             "Nombre total des étages (départ + arrivée) avec portage du piano",
           select: {
@@ -46,14 +46,14 @@ export default {
           label: "Coffre fort",
           description: "Total des étages (départ + arrivée)",
         },
-        other: {
-          name: "other",
-          label: "Autre",
-          input: {
-            name: "itemName",
-            label: "Décrire votre produit (Nom, taille...)",
-          },
-        },
+        // other: {
+        //   name: "other",
+        //   label: "Autre",
+        //   input: {
+        //     name: "itemName",
+        //     label: "Décrire votre produit (Nom, taille...)",
+        //   },
+        // },
       },
     },
     mounting: {
