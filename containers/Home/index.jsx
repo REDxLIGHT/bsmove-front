@@ -89,9 +89,23 @@ const HomeAdvantagesSection = () => (
       <h3>Pourquoi choisir BS Move</h3>
       <p>Gagnez du temps précieux grâce à notre équipe expérimentée qui prend en charge l'emballage, la logistique et les formalités administratives. Du premier contact à l'installation, nos experts vous accompagnent pour une transition sans stress. Avec Bs Move Déménagement, bénéficiez d'un service professionnel de qualité, où chaque détail compte pour assurer votre satisfaction totale.</p>
       <div className={styles.AdvantageFlex2}>
-        <h5>Gain de temps</h5>
-        <h5>Accompagnement expert</h5>
-        <h5>Service professionnel</h5>
+        <h5 style={{
+          backgroundColor: '#ECFDF5',
+          padding: '10px',
+          borderRadius: '10px',
+        }}>Gain de temps</h5>
+        <h5 style={{
+          backgroundColor: '#FFFBEB',
+          padding: '10px',
+          borderRadius: '10px',
+
+        }}>Accompagnement expert</h5>
+        <h5 style={{
+          backgroundColor: '#E8EDFB',
+          padding: '10px',
+          borderRadius: '10px',
+
+        }}>Service professionnel</h5>
       </div>
     </div>
   </div>

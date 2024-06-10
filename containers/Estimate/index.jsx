@@ -361,17 +361,14 @@ const EstimateContainer = ({ step = 0, setStep }) => {
                   display: 'flex',
                   flexDirection: 'row-reverse',
                   width: '100%',
-                  gap: '10px'
+                  gap: '10px',
+                  marginRight: '20px'
                 }}>
                   <Button onClick={handleNextStep}>
                     {messages.actions.nextStep}
                   </Button>
                   {step > 0 && step != 2 && (
-                    <Button onClick={handlePreviousStep} style={{
-                      backgroundColor: 'white',
-                      color: '#38c798',
-                      border: '0.5px solid #38c798',
-                    }}>
+                    <Button onClick={handlePreviousStep}>
                       {messages.actions.previousStep}
                     </Button>
                   )}

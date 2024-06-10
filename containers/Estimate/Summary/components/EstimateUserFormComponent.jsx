@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Button from '../../../../components/Button';
 import styles from './UserDataForm.module.css';
-import api from '../../../../helpers/api';
+import Input from '../../../../components/Input'
 
 const EstimateUserFormComponent = ({ onSubmit, handleContinue, initialFormData, step = 3 }) => {
   const [formDataState, setFormDataState] = useState({
@@ -38,85 +38,86 @@ const EstimateUserFormComponent = ({ onSubmit, handleContinue, initialFormData, 
   };
 
   return (
-    
-    <div className={styles["form-container"]}>
-      <h2 className={styles["form-title"]}>Votre Informations</h2>
       <form >
-        <div className={styles["form-group"]}>
-          <label htmlFor="name">Prénom</label>
-          <input
+        <div className={styles.rent_summary__left_container}>
+        <h2 className={styles["form-title"]}>Informations personnelles</h2>
+          <Input
             type="text"
             id="prename"
             name="prename"
-            placeholder='votre prénom'
+            label={"Prénom"}
+            placeholder={"Ex: Jean"}
             value={formDataState.prename}
             onChange={handleChange}
             required
+            fullWidth
             disabled={!isEditMode}
           />
-        </div>
-        <div className={styles["form-group"]}>
-          <label htmlFor="name">Nom</label>
-          <input
+          <Input
             type="text"
             id="name"
             name="name"
-            placeholder='votre nom'
+            label={"Nom"}
+            placeholder={"Ex: Dupont"}
             value={formDataState.name}
             onChange={handleChange}
             required
+            fullWidth
             disabled={!isEditMode}
           />
-        </div>
-        <div className={styles["form-group"]}>
-          <label htmlFor="email">Email</label>
-          <input
+          <Input
             type="email"
             id="email"
             name="email"
-            placeholder='votre email'
+            label={"Prénom"}
+            placeholder={"Ex: Jean"}
             value={formDataState.email}
             onChange={handleChange}
             required
+            fullWidth
             disabled={!isEditMode}
           />
-        </div>
-        <div className={styles["form-group"]}>
-          <label htmlFor="phone">Numero de telephone</label>
-          <input
+          <Input
             type="tel"
             id="phone"
             name="phone"
-            placeholder='votre numero de telephone'
+            label={"Téléphone"}
+            placeholder={"Ex: 0712345678"}
             value={formDataState.phone}
             onChange={handleChange}
             required
+            fullWidth
             disabled={!isEditMode}
           />
-        </div>
-        <div className={styles["form-group"]}>
-          <label htmlFor="address">Address</label>
-          <input
+          <Input
             type="text"
             id="address"
             name="address"
-            placeholder='votre address'
+            label={"Addresse"}
+            placeholder={"Ex: 10 rue des champs élysées"}
             value={formDataState.address}
             onChange={handleChange}
             required
+            fullWidth
             disabled={!isEditMode}
           />
-        </div>
         <div className={styles["form-actions"]}>
           {isEditMode ? (
-            <Button onClick={handleSave}>Save</Button>
+            <Button onClick={handleSave}>Sauvegarder</Button>
           ) : (
-            <Button onClick={handleEdit}>Edit</Button>
+            <button onClick={handleEdit} style={{
+              width: "100%",
+              border: '1px solid #38c798',
+              color: '#38c798',
+              padding: '10px',
+              borderRadius: '8px',
+              height: '3rem',
+              fontSize: '1em',
+            }}>Modifier</button>
           )}
         </div>
+        </div>
       </form>
-    </div>
-      
   );
 };
 
