@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import messages from "./messages";
 import EstimateUserFormComponent from './Summary/components/EstimateUserFormComponent'
+import EstimateUserFormComponent from './Summary/components/EstimateUserFormComponent'
 import Subtitle from "../../components/Texts/Subtitle";
 import Button from "../../components/Button";
 import Routes from "../../helpers/routes";
@@ -17,6 +18,7 @@ import { useLoading } from "../../hooks/loading";
 import { useAlert } from "../../hooks/alert";
 import PriceCalculator from "../../components/PriceCalculator";
 import { useGlobal } from "../../hooks/global";
+import { BorderLeft, Email } from "@mui/icons-material";
 import { BorderLeft, Email } from "@mui/icons-material";
 
 const HelpBox = () => {
@@ -46,6 +48,7 @@ const STEPS = [
   Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_INVENTORY_PAGE,
+  Routes.ESTIMATE_INVENTORY_PAGE,
   Routes.ESTIMATE_SUMMARY_PAGE,
 ];
 
@@ -53,7 +56,13 @@ const DEFAULT_LAT = 0;
 const DEFAULT_LNG = 0;
 
 function mapValuesToEstimateRequest(estimate, extraData, formData) {
+function mapValuesToEstimateRequest(estimate, extraData, formData) {
   return {
+    prename: formData?.prename,
+    name: formData?.name,
+    email: formData?.email,
+    phone: formData?.phone,
+    address: formData?.address,
     prename: formData?.prename,
     name: formData?.name,
     email: formData?.email,
@@ -232,9 +241,17 @@ const EstimateContainer = ({ step = 0, setStep }) => {
   const router = useRouter();
   const { estimate, clearEstimate, priceCalculator } = useEstimate();
   // const { auth, customer } = useCustomer();
+  // const { auth, customer } = useCustomer();
   const { resetRedirect, addToGlobalStateByKey } = useGlobal();
   const { setGlobalLoading } = useLoading();
   const { setAlert } = useAlert();
+  // Function to handle form data submission from EstimateUserFormComponent
+  function handleFormSubmit(data) {
+    setFormData(data); // Update the state with form data
+    console.log("Form data:", formData);
+  }
+
+  const [formData, setFormData] = useState({});
   // Function to handle form data submission from EstimateUserFormComponent
   function handleFormSubmit(data) {
     setFormData(data); // Update the state with form data
@@ -255,8 +272,13 @@ const EstimateContainer = ({ step = 0, setStep }) => {
       estimate?.details?.arrivalInformations?.address
     );
     const requestData = mapValuesToEstimateRequest(estimate, {
+    const requestData = mapValuesToEstimateRequest(estimate, {
       distance,
       priceCalculator,
+    }, formData);
+    
+    console.log("Request Data:", requestData);
+    const res = await api.post("/Estimates/no-auth", requestData);
     }, formData);
     
     console.log("Request Data:", requestData);
@@ -264,6 +286,8 @@ const EstimateContainer = ({ step = 0, setStep }) => {
     if (res?.ok) {
       await router.replace(Routes.ESTIMATE_VALIDATION_PAGE);
       clearEstimate();
+      console.log("API Response:", res);
+
       console.log("API Response:", res);
 
     } else
@@ -287,12 +311,23 @@ const EstimateContainer = ({ step = 0, setStep }) => {
       //   return router.push(Routes.LOGIN_PAGE);
       // }
       return setStep(3);
+      // if (!auth?.id) {
+      //   addToGlobalStateByKey("redirect", STEPS[step + 1]);
+      //   return router.push(Routes.LOGIN_PAGE);
+      // }
+      return setStep(3);
     }
     if (step === 3) {
+      // resetRedirect();
       // resetRedirect();
       return router.push(Routes.HOME_PAGE);
     }
     await router.push(STEPS[step + 1]);
+  }
+
+  async function handlePreviousStep() {
+    if (step === 0) return router.push(Routes.HOME_PAGE);
+    await router.push(STEPS[step - 1]);
   }
 
   async function handlePreviousStep() {
@@ -322,9 +357,18 @@ const EstimateContainer = ({ step = 0, setStep }) => {
             />
           ) : null}
           {step === 1 ? (
+          {step === 1 ? (
             <EstimateInventoryComponent
               step={step}
               handleContinue={handleContinue}
+            />
+          ) : null}
+          {step === 2 ? (
+            <EstimateUserFormComponent
+              handleContinue={handleContinue}
+              step={step}
+              initialFormData={formData}
+              onSubmit={handleFormSubmit} // Pass the handleFormSubmit function
             />
           ) : null}
           {step === 2 ? (
@@ -352,6 +396,7 @@ const EstimateContainer = ({ step = 0, setStep }) => {
               <div
                 style={{
                   display: "flex",
+                  flexDirection: "row",
                   flexDirection: "row",
                   width: "100%",
                   alignItems: "flex-end",
