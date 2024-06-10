@@ -4,7 +4,6 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import IconButton from "@mui/material/IconButton";
 import Card from "@mui/material/Card";
 import data from "./HomeFeedbacksSection/data.json";
-import data from "./HomeFeedbacksSection/data.json";
 import Routes from "../../helpers/routes";
 import Button from "../../components/Button";
 import styles from "./index.module.css";
@@ -16,28 +15,19 @@ import HomeFeedbacksSection from "./HomeFeedbacksSection/HomeFeedbacksSection";
 import CategoryPreview from "./CategoryPreview/CategoryPreview";
 import HomePrestationsSection from "./HomePrestationsSection/HomePrestationsSection";
 import OurPriorityService from "./OurPriorityService/OurPriorityService";
-import OurPriorityService from "./OurPriorityService/OurPriorityService";
 import { useState } from "react";
 
-const HomeGuidelineSection = () => (
-  <div className={styles.container_guideline}>
+const HomeGuidelineSection = () => {
+  const router = useRouter(); 
+  return(
   <div className={styles.container_guideline}>
   <div className={styles.guideline_section}>
     <div className={styles.left_guideline}>
       <h3>Obtenez votre devis immédiatement et gratuitement</h3>
       <p>Recevez instantanément votre devis gratuit en quelques clics ! Profitez d'une estimation rapide et sans engagement.</p>
-      <button>Estimez votre déménagement</button>
-    </div>
-    <div className={styles.right_guideline}>
-      <div className={styles.right_guideline_card}>
-        <span>1</span>
-        <div>
-          <h5>Je fais ma demande de devis en ligne</h5>
-          <p>Services parfaitement adaptés à vos besoins et horaires.</p>
-    <div className={styles.left_guideline}>
-      <h3>Obtenez votre devis immédiatement et gratuitement</h3>
-      <p>Recevez instantanément votre devis gratuit en quelques clics ! Profitez d'une estimation rapide et sans engagement.</p>
-      <button>Estimez votre déménagement</button>
+      <button style={{
+        cursor: 'pointer',
+      }} onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}>Estimez votre déménagement</button>
     </div>
     <div className={styles.right_guideline}>
       <div className={styles.right_guideline_card}>
@@ -47,11 +37,6 @@ const HomeGuidelineSection = () => (
           <p>Services parfaitement adaptés à vos besoins et horaires.</p>
         </div>
       </div>
-      <div className={styles.right_guideline_card}>
-        <span>2</span>
-        <div>
-          <h5>J’obtiens une estimation</h5>
-          <p>Devis immédiat et complet, sans surprises cachées.</p>
       <div className={styles.right_guideline_card}>
         <span>2</span>
         <div>
@@ -68,17 +53,8 @@ const HomeGuidelineSection = () => (
       </div>
     </div>
   </div>
-      <div className={styles.right_guideline_card}>
-        <span>3</span>
-        <div>
-          <h5>J’organise mon déménagement</h5>
-          <p>Large choix de véhicules et matériel pour déménager.</p>
-        </div>
-      </div>
-    </div>
   </div>
-  </div>
-);
+)};
 
 const S = {};
 
@@ -118,21 +94,19 @@ const HomeAdvantagesSection = () => (
       <p>Gagnez du temps précieux grâce à notre équipe expérimentée qui prend en charge l'emballage, la logistique et les formalités administratives. Du premier contact à l'installation, nos experts vous accompagnent pour une transition sans stress. Avec Bs Move Déménagement, bénéficiez d'un service professionnel de qualité, où chaque détail compte pour assurer votre satisfaction totale.</p>
       <div className={styles.AdvantageFlex2}>
         <h5 style={{
-          backgroundColor: '#ECFDF5',
-          padding: '10px',
+          padding: '15px',
+          backgroundColor: '#ecfdf5',
           borderRadius: '10px',
         }}>Gain de temps</h5>
         <h5 style={{
-          backgroundColor: '#FFFBEB',
-          padding: '10px',
+          padding: '15px',
+          backgroundColor: '#fffbeb',
           borderRadius: '10px',
-
         }}>Accompagnement expert</h5>
         <h5 style={{
-          backgroundColor: '#E8EDFB',
-          padding: '10px',
+          padding: '15px',
+          backgroundColor: '#e8edfb',
           borderRadius: '10px',
-
         }}>Service professionnel</h5>
       </div>
     </div>
@@ -145,10 +119,7 @@ const HomeCompetencesSection = () => (
       <div className={styles.section_subtitle}>
         {messages.competencesSection.subtitle1}
         <div className={styles.subtitle2}>{messages.competencesSection.subtitle2}</div>
-        {messages.competencesSection.subtitle1}
-        <div className={styles.subtitle2}>{messages.competencesSection.subtitle2}</div>
       </div>
-      
       
       <div className={styles.competences_section_infos_content}>
         <div>{messages.competencesSection.contents.firstPart}</div>
@@ -164,15 +135,7 @@ const HomePresentationSection = () => {
     position: 'relative',
     height: '500px',
   }}>
-const HomePresentationSection = () => {
-  const router = useRouter();
-  return (
-  <div style={{
-    position: 'relative',
-    height: '500px',
-  }}>
   <div className={styles.presentation_section}>
-    
     
     <div className={styles.presentation_section_infos}>
       <div className={styles.section_subtitle}>
@@ -182,20 +145,16 @@ const HomePresentationSection = () => {
         {messages.presentationSection.content}
       </div>
       <button className={styles.presentationSectionButton} onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}>Estimez votre déménagement</button>
-      <button className={styles.presentationSectionButton} onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}>Estimez votre déménagement</button>
     </div>
     <div className={styles.presentation_section_illustration_container}>
       <Image
         className={styles.presentation_section_illustration}
         layout="fill"
         src="/images/france1.png"
-        src="/images/france1.png"
         alt="where_img_homescreen"
       />
     </div>
   </div>
-  </div>
-)};
   </div>
 )};
 
@@ -290,39 +249,19 @@ const HomeGettingStartedSection = ({ technicalIssueAlert }) => {
   return (
     <div className={styles.getting_started_section}>
       
-      
       <div className={styles.getting_started_container}>
-        <img width={73} height={73}  src={'/images/left_box.png'} className={styles.left_box}></img>
-      <img width={73} height={73}  src={'/images/right_box.png'} className={styles.right_box}></img>
         <img width={73} height={73}  src={'/images/left_box.png'} className={styles.left_box}></img>
       <img width={73} height={73}  src={'/images/right_box.png'} className={styles.right_box}></img>
           <div className={styles.getting_started_infos}>
             <h3 >
-            <h3 >
               {messages.gettingStartedSection.subtitle}
-            </h3>
-            <p>
             </h3>
             <p>
               {messages.gettingStartedSection.content}
             </p>
             <div className={styles.buttons}>
             <button
-            </p>
-            <div className={styles.buttons}>
-            <button
               onClick={() => router.push(Routes.ESTIMATE_DETAILS_PAGE)}
-            >
-              Estimez votre déménagement
-            </button>
-            <button
-              onClick={() => router.push(Routes.CONTACT_PAGE)}
-            >
-              Contactez-nous
-            </button>
-            </div>
-          </div>
-        </div>
             >
               Estimez votre déménagement
             </button>
@@ -348,14 +287,11 @@ const HomePageContainer = () => {
     <div className={styles.container}>
       <HomeEstimateSection technicalIssueAlert={technicalIssueAlert} />
       <OurPriorityService />
-      <OurPriorityService />
       <HomePrestationsSection technicalIssueAlert={technicalIssueAlert} />
-      <HomeFeedbacksSection testimonialData={data} technicalIssueAlert={technicalIssueAlert} />
       <HomeFeedbacksSection testimonialData={data} technicalIssueAlert={technicalIssueAlert} />
       <HomeGuidelineSection technicalIssueAlert={technicalIssueAlert} />
       <HomeAdvantagesSection technicalIssueAlert={technicalIssueAlert} />
       <HomeCompetencesSection technicalIssueAlert={technicalIssueAlert} />
-      <div className={styles.presentation_section_illustration_container_bg}></div>
       <div className={styles.presentation_section_illustration_container_bg}></div>
       <HomePresentationSection technicalIssueAlert={technicalIssueAlert} />
       {/* <HomeBlogSection technicalIssueAlert={technicalIssueAlert} /> */}

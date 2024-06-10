@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import messages from "./messages";
 import EstimateUserFormComponent from './Summary/components/EstimateUserFormComponent'
-import EstimateUserFormComponent from './Summary/components/EstimateUserFormComponent'
 import Subtitle from "../../components/Texts/Subtitle";
 import Button from "../../components/Button";
 import Routes from "../../helpers/routes";
@@ -18,7 +17,6 @@ import { useLoading } from "../../hooks/loading";
 import { useAlert } from "../../hooks/alert";
 import PriceCalculator from "../../components/PriceCalculator";
 import { useGlobal } from "../../hooks/global";
-import { BorderLeft, Email } from "@mui/icons-material";
 import { BorderLeft, Email } from "@mui/icons-material";
 
 const HelpBox = () => {
@@ -55,7 +53,6 @@ const STEPS = [
 const DEFAULT_LAT = 0;
 const DEFAULT_LNG = 0;
 
-function mapValuesToEstimateRequest(estimate, extraData, formData) {
 function mapValuesToEstimateRequest(estimate, extraData, formData) {
   return {
     prename: formData?.prename,
@@ -258,7 +255,6 @@ const EstimateContainer = ({ step = 0, setStep }) => {
     console.log("Form data:", formData);
   }
 
-  const [formData, setFormData] = useState({});
 
   function handleContinue(value, errorMessage = "") {
     setCanContinue(value);
@@ -271,16 +267,14 @@ const EstimateContainer = ({ step = 0, setStep }) => {
       estimate?.details?.departureInformations?.address,
       estimate?.details?.arrivalInformations?.address
     );
-    const requestData = mapValuesToEstimateRequest(estimate, {
+
     const requestData = mapValuesToEstimateRequest(estimate, {
       distance,
       priceCalculator,
     }, formData);
     
     console.log("Request Data:", requestData);
-    const res = await api.post("/Estimates/no-auth", requestData);
-    }, formData);
-    
+
     console.log("Request Data:", requestData);
     const res = await api.post("/Estimates/no-auth", requestData);
     if (res?.ok) {
@@ -356,19 +350,11 @@ const EstimateContainer = ({ step = 0, setStep }) => {
               handleContinue={handleContinue}
             />
           ) : null}
-          {step === 1 ? (
+          
           {step === 1 ? (
             <EstimateInventoryComponent
               step={step}
               handleContinue={handleContinue}
-            />
-          ) : null}
-          {step === 2 ? (
-            <EstimateUserFormComponent
-              handleContinue={handleContinue}
-              step={step}
-              initialFormData={formData}
-              onSubmit={handleFormSubmit} // Pass the handleFormSubmit function
             />
           ) : null}
           {step === 2 ? (
