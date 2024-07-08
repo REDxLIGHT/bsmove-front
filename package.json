@@ -16,8 +16,6 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.1",
     "@mui/x-date-pickers": "^5.0.12",
-    "@next/font": "^14.2.4",
-    "@swc/core": "1.6.13",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.16.0",
     "apisauce": "^3.0.1",
