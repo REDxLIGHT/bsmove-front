@@ -49,7 +49,6 @@ export default function App({
 
 
   return (
-    <main >
     <CacheProvider value={emotionCache}>
       <GlobalProvider>
         <StyledEngineProvider injectFirst>
@@ -77,6 +76,5 @@ export default function App({
         </StyledEngineProvider>
       </GlobalProvider>
     </CacheProvider>
-    </main>
   );
 }
